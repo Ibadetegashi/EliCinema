@@ -1,0 +1,10 @@
+﻿@model CinemaApplication.Models.Users.User
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Emri: @Model.FirstName</h2>
+<h2>Mbiemri: @Model.LastName</h2>
+<h2>Is admin: @(Model.IsAdmin ? "Po" : "Jo")</h2>
+
+<a href="@Url.Action("Add")" class="btn btn-success">Kthehu te forma</a>

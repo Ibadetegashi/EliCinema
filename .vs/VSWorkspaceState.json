@@ -1,6 +1,12 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\CinemaApplication",
+    "\\CinemaApplication\\CinemaApplication",
+    "\\CinemaApplication\\CinemaApplication\\Models",
+    "\\CinemaApplication\\CinemaApplication\\Views",
+    "\\CinemaApplication\\CinemaApplication\\Views\\Users"
   ],
+  "SelectedNode": "\\CinemaApplication\\CinemaApplication.sln",
   "PreviewInSolutionExplorer": false
 }

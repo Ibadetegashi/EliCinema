@@ -1,0 +1,54 @@
+﻿@using CinemaApplication.Models.Users;
+
+@{
+    ViewData["Title"] = "Index";
+
+    var user = (User)ViewData["User"];
+}
+
+<h2>Perdoruesi: @user.FirstName @user.LastName</h2>
+
+<table>
+    <tr>
+        <td>
+            Id
+        </td>
+        <td>
+            @user.Id
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Emri
+        </td>
+        <td>
+            @user.FirstName
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Mbiemri
+        </td>
+        <td>
+            @user.LastName
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Eshte administrator?
+        </td>
+        <td>
+            @if (user.IsAdmin)
+            {
+                @:Po
+            }
+            else
+            {
+                @:Jo
+            }
+        </td>
+    </tr>
+</table>
+
+<br />
+<a href="@Url.Action("Index")">Kthehu te perdoruesit</a>

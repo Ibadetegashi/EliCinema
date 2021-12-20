@@ -1,0 +1,20 @@
+﻿@using CinemaApplication.Models.Users; 
+
+@{
+    ViewData["Title"] = "Index";
+
+    var users = (List<User>)ViewData["Users"];
+}
+
+<h2>Perdoruesit</h2>
+
+<ul>
+    @foreach (var user in users)
+    {
+        <li>
+            @user.FirstName @user.LastName (@(user.IsAdmin ? "Admin" : "Not admin")) (<a href="@Url.Action("Details", new { id = user.Id })">Shiko detajet</a>)
+        </li>
+    }
+</ul>
+<a href="@Url.Action("Add")" class="btn btn-success">Shto përdorues</a>
+

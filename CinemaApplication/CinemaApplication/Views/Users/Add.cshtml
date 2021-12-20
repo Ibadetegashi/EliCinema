@@ -1,0 +1,13 @@
+﻿@model CinemaApplication.Models.Users.User
+@{
+    ViewData["Title"] = "Add";
+}
+
+<h2>Add</h2>
+
+<form method="post" asp-action="Create">
+    <input type="text" placeholder="Emri" asp-for="FirstName" />
+    <input type="text" placeholder="Mbiemri" asp-for="LastName" />
+    <input type="checkbox" asp-for="IsAdmin" />
+    <input type="submit" value="Krijo" />
+</form>
