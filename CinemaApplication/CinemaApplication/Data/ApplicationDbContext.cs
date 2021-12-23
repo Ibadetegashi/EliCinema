@@ -3,6 +3,9 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using CinemaApplication.Models.Users;
+
+using CinemaApplication.Models;
 
 namespace CinemaApplication.Data
 {
@@ -12,5 +15,6 @@ namespace CinemaApplication.Data
             : base(options)
         {
         }
+        public DbSet<Genre> Genres { get; set; }
     }
 }
