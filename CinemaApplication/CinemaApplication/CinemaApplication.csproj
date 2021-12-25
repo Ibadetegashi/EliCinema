@@ -8,6 +8,8 @@
   <ItemGroup>
     <Compile Remove="Data\Migrations\20211223202640_addGenreToDatabase.cs" />
     <Compile Remove="Data\Migrations\20211223202640_addGenreToDatabase.Designer.cs" />
+    <Compile Remove="Data\Migrations\20211225163944_PageUp.cs" />
+    <Compile Remove="Data\Migrations\20211225163944_PageUp.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

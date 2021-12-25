@@ -9178,11 +9178,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ibade\\Source\\Repos\\ELICinemaProject\\CinemaApplication\\CinemaApplication\\CinemaApplication.csproj",
+      "projectUniqueName": "C:\\Users\\ibade\\Source\\Repos\\CinemaProjectNew\\CinemaApplication\\CinemaApplication\\CinemaApplication.csproj",
       "projectName": "CinemaApplication",
-      "projectPath": "C:\\Users\\ibade\\Source\\Repos\\ELICinemaProject\\CinemaApplication\\CinemaApplication\\CinemaApplication.csproj",
+      "projectPath": "C:\\Users\\ibade\\Source\\Repos\\CinemaProjectNew\\CinemaApplication\\CinemaApplication\\CinemaApplication.csproj",
       "packagesPath": "C:\\Users\\ibade\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ibade\\Source\\Repos\\ELICinemaProject\\CinemaApplication\\CinemaApplication\\obj\\",
+      "outputPath": "C:\\Users\\ibade\\Source\\Repos\\CinemaProjectNew\\CinemaApplication\\CinemaApplication\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
