@@ -10,6 +10,40 @@
     <Compile Remove="Data\Migrations\20211223202640_addGenreToDatabase.Designer.cs" />
     <Compile Remove="Data\Migrations\20211225163944_PageUp.cs" />
     <Compile Remove="Data\Migrations\20211225163944_PageUp.Designer.cs" />
+    <Compile Remove="Data\Migrations\20211226142250_GenreUpdate.cs" />
+    <Compile Remove="Data\Migrations\20211226142250_GenreUpdate.Designer.cs" />
+    <Compile Remove="Data\Migrations\20211226143117_Genre.cs" />
+    <Compile Remove="Data\Migrations\20211226143117_Genre.Designer.cs" />
+    <Compile Remove="Data\Migrations\20211226170634_GenreInDb.cs" />
+    <Compile Remove="Data\Migrations\20211226170634_GenreInDb.Designer.cs" />
+    <Compile Remove="Data\Migrations\20211226170715_GenreDb.cs" />
+    <Compile Remove="Data\Migrations\20211226170715_GenreDb.Designer.cs" />
+    <Compile Remove="Data\Migrations\20211226171046_GenreDatabase.cs" />
+    <Compile Remove="Data\Migrations\20211226171046_GenreDatabase.Designer.cs" />
+    <Compile Remove="Data\Migrations\20211226172325_Genre.cs" />
+    <Compile Remove="Data\Migrations\20211226172325_Genre.Designer.cs" />
+    <Compile Remove="Data\Migrations\20211226184405_SecondGenre.cs" />
+    <Compile Remove="Data\Migrations\20211226184405_SecondGenre.Designer.cs" />
+    <Compile Remove="Data\Migrations\20211226184446_SecondGenres.cs" />
+    <Compile Remove="Data\Migrations\20211226184446_SecondGenres.Designer.cs" />
+    <Compile Remove="Data\Migrations\20211226194418_ThirdMovieDb.cs" />
+    <Compile Remove="Data\Migrations\20211226194418_ThirdMovieDb.Designer.cs" />
+    <Compile Remove="Data\Migrations\20211226194458_MovieDb.cs" />
+    <Compile Remove="Data\Migrations\20211226194458_MovieDb.Designer.cs" />
+    <Compile Remove="Data\Migrations\20211226194653_MoviesDb.cs" />
+    <Compile Remove="Data\Migrations\20211226194653_MoviesDb.Designer.cs" />
+    <Compile Remove="Data\Migrations\20211226194738_DatabaseMovie.cs" />
+    <Compile Remove="Data\Migrations\20211226194738_DatabaseMovie.Designer.cs" />
+    <Compile Remove="Data\Migrations\20211226194820_Moviess.cs" />
+    <Compile Remove="Data\Migrations\20211226194820_Moviess.Designer.cs" />
+    <Compile Remove="Data\Migrations\20211226194904_Filma.cs" />
+    <Compile Remove="Data\Migrations\20211226194904_Filma.Designer.cs" />
+    <Compile Remove="Data\Migrations\20211226195012_DbMovie.cs" />
+    <Compile Remove="Data\Migrations\20211226195012_DbMovie.Designer.cs" />
+    <Compile Remove="Data\Migrations\20211226195218_Moviee.cs" />
+    <Compile Remove="Data\Migrations\20211226195218_Moviee.Designer.cs" />
+    <Compile Remove="Data\Migrations\20211226235944_Actor.cs" />
+    <Compile Remove="Data\Migrations\20211226235944_Actor.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -23,6 +57,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.TestPlatform.ObjectModel" Version="17.0.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
   </ItemGroup>
 

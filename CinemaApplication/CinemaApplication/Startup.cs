@@ -66,7 +66,7 @@ namespace CinemaApplication
                     );
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Genre}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
         }

@@ -9,9 +9,12 @@ using System.Threading.Tasks;
 
 namespace CinemaApplication.Areas.Admin.Controllers
 {
-    [Area("Admin")]
+        [Area("Admin")]
+
     public class PagesController : Controller
     {
+        
+
         private readonly ApplicationDbContext context;
 
         public PagesController(ApplicationDbContext context)

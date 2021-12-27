@@ -1,11 +1,11 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using CinemaApplication.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
+using System.Threading.Tasks;
 
-
-using CinemaApplication.Models;
 
 
 namespace CinemaApplication.Data
@@ -16,7 +16,12 @@ namespace CinemaApplication.Data
             : base(options)
         {
         }
-        public DbSet<Genre> Genres { get; set; }
+
+    
+
         public DbSet<Page> Pages { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Movie> Movies { get; set; }
+   
     }
 }
