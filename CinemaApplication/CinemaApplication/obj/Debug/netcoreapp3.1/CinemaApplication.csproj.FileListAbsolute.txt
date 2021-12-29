@@ -574,3 +574,4 @@ C:\Users\ibade\source\repos\CinemaProjectNew\CinemaApplication\CinemaApplication
 C:\Users\ibade\source\repos\CinemaProjectNew\CinemaApplication\CinemaApplication\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Movies\Create.cshtml.g.cs
 C:\Users\ibade\source\repos\CinemaProjectNew\CinemaApplication\CinemaApplication\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Movies\Details.cshtml.g.cs
 C:\Users\ibade\source\repos\CinemaProjectNew\CinemaApplication\CinemaApplication\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Movies\Edit.cshtml.g.cs
+C:\Users\ibade\source\repos\CinemaProjectNew\CinemaApplication\CinemaApplication\obj\Debug\netcoreapp3.1\Razor\Views\Pages\Page.cshtml.g.cs

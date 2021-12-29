@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -44,6 +44,10 @@
     <Compile Remove="Data\Migrations\20211226195218_Moviee.Designer.cs" />
     <Compile Remove="Data\Migrations\20211226235944_Actor.cs" />
     <Compile Remove="Data\Migrations\20211226235944_Actor.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Views\Pages\Page.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
