@@ -1,4 +1,5 @@
 ﻿using CinemaApplication.Data;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -51,6 +52,11 @@ namespace CinemaApplication.Models
                 );
                 context.SaveChanges();
             }
+        }
+
+        internal static void Initialize(IApplicationBuilder app)
+        {
+            throw new NotImplementedException();
         }
     }
 }

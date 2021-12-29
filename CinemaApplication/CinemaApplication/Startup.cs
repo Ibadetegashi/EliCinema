@@ -12,6 +12,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CinemaApplication.Models;
+
 
 namespace CinemaApplication
 {
@@ -74,7 +76,10 @@ namespace CinemaApplication
                     pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
+            AppDbInitializer.Seed(app);
+           
         }
     
     }
 }
+

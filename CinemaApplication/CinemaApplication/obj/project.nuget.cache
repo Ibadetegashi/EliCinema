@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xDEuH8l8WiO2+fvStICl0uzFkEnpdsAPeMS1guL+HQiZldTzrURqKDt/fjMEn2Y2LMsm34M+Dzv4o/ElsMzGzQ==",
+  "dgSpecHash": "Vyrn8ilg1RhPIhZBfCi/H5Ry2X6BQVOFLUKozvrxTC9dm572hlYaSk/lPEpvWqu61IK1DgQu80UPupciSSol5w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ibade\\source\\repos\\CinemaProjectNew\\CinemaApplication\\CinemaApplication\\CinemaApplication.csproj",
+  "projectFilePath": "C:\\Users\\ibade\\source\\repos\\12\\29\\21\\CinemaApplication\\CinemaApplication\\CinemaApplication.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ibade\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\ibade\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.20\\microsoft.aspnetcore.cryptography.internal.3.1.20.nupkg.sha512",
