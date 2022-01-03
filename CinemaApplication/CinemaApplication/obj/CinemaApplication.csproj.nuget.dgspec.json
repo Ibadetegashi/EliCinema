@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ibade\\source\\repos\\12\\29\\21\\CinemaApplication\\CinemaApplication\\CinemaApplication.csproj": {}
+    "C:\\Users\\ibade\\source\\repos\\30\\CinemaApplication\\CinemaApplication\\CinemaApplication.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ibade\\source\\repos\\12\\29\\21\\CinemaApplication\\CinemaApplication\\CinemaApplication.csproj": {
+    "C:\\Users\\ibade\\source\\repos\\30\\CinemaApplication\\CinemaApplication\\CinemaApplication.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ibade\\source\\repos\\12\\29\\21\\CinemaApplication\\CinemaApplication\\CinemaApplication.csproj",
+        "projectUniqueName": "C:\\Users\\ibade\\source\\repos\\30\\CinemaApplication\\CinemaApplication\\CinemaApplication.csproj",
         "projectName": "CinemaApplication",
-        "projectPath": "C:\\Users\\ibade\\source\\repos\\12\\29\\21\\CinemaApplication\\CinemaApplication\\CinemaApplication.csproj",
+        "projectPath": "C:\\Users\\ibade\\source\\repos\\30\\CinemaApplication\\CinemaApplication\\CinemaApplication.csproj",
         "packagesPath": "C:\\Users\\ibade\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ibade\\source\\repos\\12\\29\\21\\CinemaApplication\\CinemaApplication\\obj\\",
+        "outputPath": "C:\\Users\\ibade\\source\\repos\\30\\CinemaApplication\\CinemaApplication\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
@@ -82,6 +82,10 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[3.1.5, )"
+            },
+            "System.Linq.Dynamic.Core": {
+              "target": "Package",
+              "version": "[1.2.15, )"
             }
           },
           "imports": [

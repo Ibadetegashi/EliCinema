@@ -44,6 +44,8 @@
     <Compile Remove="Data\Migrations\20211226195218_Moviee.Designer.cs" />
     <Compile Remove="Data\Migrations\20211226235944_Actor.cs" />
     <Compile Remove="Data\Migrations\20211226235944_Actor.Designer.cs" />
+    <Compile Remove="Data\Migrations\20211230130700_ThirdInitial.cs" />
+    <Compile Remove="Data\Migrations\20211230130700_ThirdInitial.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -63,6 +65,7 @@
     </PackageReference>
     <PackageReference Include="Microsoft.TestPlatform.ObjectModel" Version="17.0.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
+    <PackageReference Include="System.Linq.Dynamic.Core" Version="1.2.15" />
   </ItemGroup>
 
 </Project>

@@ -22,7 +22,7 @@ namespace CinemaApplication.Areas.Admin.Controllers
         }
 
         // GET /admin/categories
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int p=1)
         {
             return View(await context.Categories.OrderBy(x => x.Sorting).ToListAsync());
         }

@@ -25,3 +25,19 @@ function readURL(input) {
         reader.readAsDataURL(input.files[0]);
     }
 }
+
+$(document).ready(function () {
+    $('#myTable').DataTable({
+        "scrollY": "600px",
+        "scrollCollapse": true,
+        "paging": true
+    });
+});
+$(document).ready(function () {
+    $('#myActorTable').DataTable({
+        //"scrollY": "600px",
+        //"scrollCollapse": true,
+        "paging": true,
+        "length":5
+    });
+});

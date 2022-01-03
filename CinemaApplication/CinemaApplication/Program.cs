@@ -17,20 +17,20 @@ namespace CinemaApplication
         {
             var host = CreateHostBuilder(args).Build();
 
-            using (var scope = host.Services.CreateScope())
-            {
-                var services = scope.ServiceProvider;
+            //using (var scope = host.Services.CreateScope())
+            //{
+            //    var services = scope.ServiceProvider;
 
-                try
-                {
-                    SeedData.Initialize(services);
-                }
-                catch (Exception)
-                {
+            //    try
+            //    {
+            //        SeedData.Initialize(services);
+            //    }
+            //    catch (Exception)
+            //    {
 
-                    throw;
-                }
-            }
+            //        throw;
+            //    }
+            //}
 
             host.Run();
         }

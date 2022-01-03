@@ -13,6 +13,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CinemaApplication.Models;
+using CinemaApplication.Areas.Admin.Services;
 
 
 namespace CinemaApplication
@@ -34,6 +35,7 @@ namespace CinemaApplication
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+            services.AddScoped<IActorsService, ActorsService>();
             services.AddControllersWithViews();
             services.AddRazorPages();
         }
