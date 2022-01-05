@@ -36,6 +36,7 @@ namespace CinemaApplication
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddScoped<IActorsService, ActorsService>();
+            services.AddScoped<IProducersService, ProducersService>();
             services.AddControllersWithViews();
             services.AddRazorPages();
         }
