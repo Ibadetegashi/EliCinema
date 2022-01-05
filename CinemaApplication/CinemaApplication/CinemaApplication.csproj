@@ -49,6 +49,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Areas\Admin\Views\Cinemas\Create.cshtml" />
+    <None Include="Areas\Admin\Views\Cinemas\Delete.cshtml" />
+    <None Include="Areas\Admin\Views\Cinemas\Details.cshtml" />
+    <None Include="Areas\Admin\Views\Cinemas\Edit.cshtml" />
+    <None Include="Areas\Admin\Views\Cinemas\Index.cshtml" />
     <None Include="Views\Pages\Page.cshtml" />
   </ItemGroup>
 

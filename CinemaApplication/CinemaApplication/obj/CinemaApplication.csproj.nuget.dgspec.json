@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Agron\\source\\repos\\CinemaProject1\\CinemaApplication\\CinemaApplication\\CinemaApplication.csproj": {}
+    "C:\\Users\\STARTECH\\Source\\Repos\\CinemaProject4\\CinemaApplication\\CinemaApplication\\CinemaApplication.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Agron\\source\\repos\\CinemaProject1\\CinemaApplication\\CinemaApplication\\CinemaApplication.csproj": {
+    "C:\\Users\\STARTECH\\Source\\Repos\\CinemaProject4\\CinemaApplication\\CinemaApplication\\CinemaApplication.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Agron\\source\\repos\\CinemaProject1\\CinemaApplication\\CinemaApplication\\CinemaApplication.csproj",
+        "projectUniqueName": "C:\\Users\\STARTECH\\Source\\Repos\\CinemaProject4\\CinemaApplication\\CinemaApplication\\CinemaApplication.csproj",
         "projectName": "CinemaApplication",
-        "projectPath": "C:\\Users\\Agron\\source\\repos\\CinemaProject1\\CinemaApplication\\CinemaApplication\\CinemaApplication.csproj",
-        "packagesPath": "C:\\Users\\Agron\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Agron\\source\\repos\\CinemaProject1\\CinemaApplication\\CinemaApplication\\obj\\",
+        "projectPath": "C:\\Users\\STARTECH\\Source\\Repos\\CinemaProject4\\CinemaApplication\\CinemaApplication\\CinemaApplication.csproj",
+        "packagesPath": "C:\\Users\\STARTECH\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\STARTECH\\Source\\Repos\\CinemaProject4\\CinemaApplication\\CinemaApplication\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Agron\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\STARTECH\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -101,7 +101,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }
