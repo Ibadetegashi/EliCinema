@@ -53,8 +53,28 @@ namespace CinemaApplication.Data
                 //    }
                 //);
                 //context.SaveChanges();
-                //Producers
-                if (!context.Producers.Any())
+                //Actors & Movies
+                if (!context.Actors_Movies.Any())
+                {
+                    context.Actors_Movies.AddRange(new List<Actor_Movie>()
+                    {
+
+                        new Actor_Movie()
+                        {
+                            ActorId = 2,
+                            MovieId = 2
+                        },
+                        new Actor_Movie()
+                        {
+                            ActorId = 2,
+                            MovieId = 3
+                        },
+                    });
+                    context.SaveChanges();
+                }
+            
+            //Producers
+            if (!context.Producers.Any())
                 {
                     context.Producers.AddRange(new List<Producer>()
                     {
@@ -92,7 +112,86 @@ namespace CinemaApplication.Data
                     });
                     context.SaveChanges();
                 }
-
+                //Movies
+                if (!context.Movies.Any())
+                {
+                    context.Movies.AddRange(new List<Movie>()
+                    {
+                        new Movie()
+                        {
+                            Name = "Life",
+                            Description = "This is the Life movie description",
+                            Price = 39.50,
+                            ImageURL = "http://dotnethow.net/images/movies/movie-3.jpeg",
+                            StartDate = DateTime.Now.AddDays(-10),
+                            EndDate = DateTime.Now.AddDays(10),
+                            CinemaId = 3,
+                            ProducerId = 3,
+                            CategoryId = 2
+                        },
+                        new Movie()
+                        {
+                            Name = "The Shawshank Redemption",
+                            Description = "This is the Shawshank Redemption description",
+                            Price = 29.50,
+                            ImageURL = "http://dotnethow.net/images/movies/movie-1.jpeg",
+                            StartDate = DateTime.Now,
+                            EndDate = DateTime.Now.AddDays(3),
+                            CinemaId = 1,
+                            ProducerId = 1,
+                            CategoryId = 1
+                        },
+                        new Movie()
+                        {
+                            Name = "Ghost",
+                            Description = "This is the Ghost movie description",
+                            Price = 39.50,
+                            ImageURL = "http://dotnethow.net/images/movies/movie-4.jpeg",
+                            StartDate = DateTime.Now,
+                            EndDate = DateTime.Now.AddDays(7),
+                            CinemaId = 4,
+                            ProducerId = 4,
+                            CategoryId = 4
+                        },
+                        new Movie()
+                        {
+                            Name = "Race",
+                            Description = "This is the Race movie description",
+                            Price = 39.50,
+                            ImageURL = "http://dotnethow.net/images/movies/movie-6.jpeg",
+                            StartDate = DateTime.Now.AddDays(-10),
+                            EndDate = DateTime.Now.AddDays(-5),
+                            CinemaId = 1,
+                            ProducerId = 2,
+                            CategoryId = 2
+                        },
+                        new Movie()
+                        {
+                            Name = "Scoob",
+                            Description = "This is the Scoob movie description",
+                            Price = 39.50,
+                            ImageURL = "http://dotnethow.net/images/movies/movie-7.jpeg",
+                            StartDate = DateTime.Now.AddDays(-10),
+                            EndDate = DateTime.Now.AddDays(-2),
+                            CinemaId = 1,
+                            ProducerId = 3,
+                            CategoryId = 1
+                        },
+                        new Movie()
+                        {
+                            Name = "Cold Soles",
+                            Description = "This is the Cold Soles movie description",
+                            Price = 39.50,
+                            ImageURL = "http://dotnethow.net/images/movies/movie-8.jpeg",
+                            StartDate = DateTime.Now.AddDays(3),
+                            EndDate = DateTime.Now.AddDays(20),
+                            CinemaId = 1,
+                            ProducerId = 5,
+                            CategoryId = 4
+                        }
+                    });
+                    context.SaveChanges();
+                }
                 if (!context.Actors.Any())
                 {
                     context.Actors.AddRange(new List<Actor>()
@@ -136,6 +235,7 @@ namespace CinemaApplication.Data
 
 
             }
+
 
             //public static async Task SeedUsersAndRolesAsync(IApplicationBuilder applicationBuilder)
             //{

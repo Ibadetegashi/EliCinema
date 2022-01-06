@@ -87,9 +87,8 @@
         }
     </tbody>
 </table>
-<div style="position:fixed; right:25px; bottom:25px;" class="text-white">
-    <a asp-controller="Actors" asp-action="Create" class="btn badge-success">Add New</a>
-</div>
+
+
+@await Html.PartialAsync("_CreateItem", "Cinemas")
 <br />
 <br />
-@*@await Html.PartialAsync("_CreateItem", "Cinemas")*@ 

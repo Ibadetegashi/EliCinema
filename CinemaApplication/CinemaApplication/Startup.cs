@@ -38,6 +38,7 @@ namespace CinemaApplication
             services.AddScoped<IActorsService, ActorsService>();
             services.AddScoped<IProducersService, ProducersService>();
             services.AddScoped<ICinemasService, CinemasService>();
+            services.AddScoped<IMoviesService, MoviesService>();
             services.AddControllersWithViews();
             services.AddRazorPages();
         }
@@ -66,6 +67,7 @@ namespace CinemaApplication
 
             app.UseEndpoints(endpoints =>
             {
+
                 endpoints.MapControllerRoute(
                  "pages",
                  "{slug?}",
