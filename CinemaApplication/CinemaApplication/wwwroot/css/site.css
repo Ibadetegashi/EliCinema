@@ -60,10 +60,11 @@ html {
 
 body {
   /* Margin bottom by footer height */
-  margin-bottom: 60px;
+  padding-bottom: 60px;
 }
 .footer {
-  position: absolute;
+  /*//position: absolute;*/
+  padding:60px;
   bottom: 0;
   width: 100%;
   white-space: nowrap;
