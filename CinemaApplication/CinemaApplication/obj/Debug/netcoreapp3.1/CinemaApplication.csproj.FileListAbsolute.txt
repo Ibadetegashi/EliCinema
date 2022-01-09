@@ -2189,7 +2189,6 @@ C:\Users\ibade\Source\Repos\9janar\CinemaApplication\CinemaApplication\obj\Debug
 C:\Users\ibade\Source\Repos\9janar\CinemaApplication\CinemaApplication\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Movies\Delete.cshtml.g.cs
 C:\Users\ibade\Source\Repos\9janar\CinemaApplication\CinemaApplication\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Movies\Details.cshtml.g.cs
 C:\Users\ibade\Source\Repos\9janar\CinemaApplication\CinemaApplication\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Movies\Edit.cshtml.g.cs
-C:\Users\ibade\Source\Repos\9janar\CinemaApplication\CinemaApplication\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Movies\Index.cshtml.g.cs
 C:\Users\ibade\Source\Repos\9janar\CinemaApplication\CinemaApplication\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Pages\Create.cshtml.g.cs
 C:\Users\ibade\Source\Repos\9janar\CinemaApplication\CinemaApplication\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Pages\Details.cshtml.g.cs
 C:\Users\ibade\Source\Repos\9janar\CinemaApplication\CinemaApplication\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Pages\Edit.cshtml.g.cs
@@ -2232,3 +2231,4 @@ C:\Users\ibade\Source\Repos\9janar\CinemaApplication\CinemaApplication\obj\Debug
 C:\Users\ibade\Source\Repos\9janar\CinemaApplication\CinemaApplication\obj\Debug\netcoreapp3.1\CinemaApplication.dll
 C:\Users\ibade\Source\Repos\9janar\CinemaApplication\CinemaApplication\obj\Debug\netcoreapp3.1\CinemaApplication.pdb
 C:\Users\ibade\Source\Repos\9janar\CinemaApplication\CinemaApplication\obj\Debug\netcoreapp3.1\CinemaApplication.genruntimeconfig.cache
+C:\Users\ibade\Source\Repos\9janar\CinemaApplication\CinemaApplication\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Movies\Index.cshtml.g.cs

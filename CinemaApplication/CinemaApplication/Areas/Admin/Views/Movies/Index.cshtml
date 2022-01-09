@@ -1,75 +1,105 @@
-﻿@model IEnumerable<Movie>
+﻿@model IEnumerable<CinemaApplication.Models.Movie>
 
-@{ ViewData["Title"] = "List of Movies"; }
-
-<div class="row">
-    @foreach (var item in Model)
-    {
-<div class="col-md-5 col-xs-6 border-primary mb-3">
-    <div class="card mb-3" style="max-width: 540px;">
-        <div class="row g-0">
-            <div class="col-md-12">
-                <div class="card-header text-white " style="background-color:pink">
-                    <p class="card-text">
-                        <h5 class="card-title">
-                            @item.Name
-                            <a class="btn btn-secondary float-right" asp-action="Edit" asp-route-id="@item.Id">
-
-                                <i class="bi bi-cart-plus"></i> Edit
+@{
+    ViewData["Title"] = "List of Movies";
+}
 
 
-                            </a>
-                            <a class="btn btn-danger text-black-50 float-right" asp-action="Delete" asp-route-id="@item.Id" style="margin:5px"><i class="bi bi-trash"></i>Delete </a>
+@*<style>
+    body {
+        background-image: url(https://png.pngtree.com/thumb_back/fh260/back_our/20190622/ourmid/pngtree-minimalist-film-festival-film-and-tv-movie-poster-image_220289.jpg);
+        background-size: cover;
+    }
+</style>*@
+@*<div style="display:flex;flex-direction:row;justify-content:space-around">
+        <em><p style="font-size:30px">Movies</p></em>
+        <a  asp-action="Create" >
+            <i class="bi bi-plus-circle"></i> Add New
+        </a>
+    </div>*@
+<em><h3>Movies</h3></em>
+<a asp-action="Create">
+    <i class="bi bi-plus-circle"></i> Add New
+</a>
+<hr />
+<table id="myActorTable" class="table table-hover table-sm">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ImageURL)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
 
-                        </h5>
-                    </p>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <img src="@item.ImageURL" width="100%" alt="@item.Name">
-            </div>
-            <div class="col-md-6">
-                <div class="card-body">
-                    <p class="card-text">@item.Description</p>
-                    <p class="card-text"><b>Cinema: </b>@item.Cinema.Name</p>
-                    <p class="card-text"><b>Category: </b>@item.MovieCategory</p>
-                    <p class="card-text"><b>Start Date: </b>@item.StartDate.ToString("dd MMM yy")</p>
-                    <p class="card-text"><b>End Date: </b>@item.EndDate.ToString("dd MMM yy")</p>
-                    <p class="card-text ">
-                        <b>Status: </b>
-                        @if (DateTime.Now >= item.StartDate && DateTime.Now <= item.EndDate)
-                        {
-        <span class="badge bg-success text-white">AVAILABLE</span> }
-                        else if (DateTime.Now > item.EndDate)
-                        {
-        <span class="badge bg-danger text-white">EXPIRED</span> }
-                        else
-                        {
-        <span class="badge bg-primary text-white">UPCOMING</span>}
-                    </p>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.StartDate)
+                </th>*@
+            <th>
+                StartDate&EndDate
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.MovieCategory)
+                </th>*@
+            @*<th>
+                    @Html.DisplayNameFor(model => model.Cinema)
+                </th>*@
+            @*<th>
+                    @Html.DisplayNameFor(model => model.Producer)
+                </th>*@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <img src="@item.ImageURL" width="100" alt="" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
 
-                </div>
-            </div>
-            <div class="col-md-12">
-                <div class="card-footer ">
-                    <p class="card-text">
-                        <a class="btn btn-outline-info float-right" asp-action="Details" asp-route-id="@item.Id">
-                            <i class="bi bi-eye"></i> Show Details
-                        </a>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StartDate)
+                    <br />
+                    @Html.DisplayFor(modelItem => item.EndDate)
 
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.EndDate)
+                    </td>*@
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.MovieCategory.Name)
+                    </td>*@
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.Cinema.Description)
+                    </td>*@
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.Producer.Bio)
+                    </td>*@
 
-                        <a class="btn btn-success text-white @((DateTime.Now > item.EndDate) ? "disabled" : "")"
-                           asp-controller="Orders"
-                           asp-action="AddItemToShoppingCart"
-                           asp-route-id="@item.Id">
-                            <i class="bi bi-cart-plus"></i> Add to Cart (Price @item.Price.ToString("c"))
-                        </a>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>}
-</div>
+                <td class="align-middle" style="max-width:fit-content()">
+                    <a class="btn btn-outline-primary" asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil-square"></i>Edit </a> |
+                    <a class="btn btn-outline-info" asp-action="Details" asp-route-id="@item.Id"><i class="bi bi-eye"></i>Details </a> |
+                    <a class="btn btn-danger text-white confirmDeletion" asp-action="Delete" asp-route-id="@item.Id"><i class="bi bi-trash"></i>Delete </a>
+                </td>
 
-@await Html.PartialAsync("_CreateItem", "Movies")
+            </tr>
+        }
+    </tbody>
+
+</table>

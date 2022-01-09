@@ -68,7 +68,8 @@
         </div>
     </div>}
     </div>*@
-<div style=" display: flex; flex-wrap: wrap;justify-content:inherit;">
+<table id="myActorTable" class="table table-hover table-sm">
+<div style=" display: flex; flex-wrap: wrap;justify-content:inherit;" >
     @foreach (var item in Model)
     {
     
@@ -76,14 +77,14 @@
             <div class="card" style="max-width: 16rem;">
                 <img src="@item.ImageURL" class="card-img-top" alt="@item.Name">
                 <div class="card-body">
-                    <h5 class="card-title">@item.Name</h5>
-                    <div class="card-body">
+                 <em> <h3 class="card-title" style="color:darkgreen;font:">@item.Name</h3></em>
+                    <div >
                         @*<p class="card-text">@item.Description</p>*@
-                        <p class="card-text"><b>Cinema: </b>@item.Cinema.Name</p>
+                        @*<p class="card-text"><b>Cinema: </b>@item.Cinema.Name</p>*@
                         @*<p class="card-text"><b>Category: </b>@item.MovieCategory.Name</p>*@
 
                         <p class="card-text ">
-                            <b>Status: </b>
+                            @*<b>Status: </b>*@
                             @if (DateTime.Now >= item.StartDate && DateTime.Now <= item.EndDate)
                             {
                                 <span class="badge bg-success text-white">AVAILABLE</span> }
@@ -98,11 +99,14 @@
                     </div>
 
                 </div>
-                <div class="card-footer">
+                <div class="card-footer" >
 
-                    <p class="card-text">
-                        <a class="btn btn-outline-info float-right" asp-action="Details" asp-route-id="@item.Id">
-                            <i class="bi bi-eye" style="padding-bottom:120px"></i> Show Details
+                    <p class="card-text" style="display:flex;justify-content:space-between">
+                        <a class="btn btn-outline-info float-right" asp-action="Details" asp-route-id="@item.Id" >
+                            <i class="bi bi-eye" style="padding-bottom:100px"></i> Show Details
+                        </a>
+                        <a class="btn btn-success text-white  @((DateTime.Now > item.EndDate) ? "disabled" : "")" asp-controller="Orders" asp-action="AddItemToShoppingCart" asp-route-id="@item.Id">
+                            <i class="bi bi-cart-plus"></i>   @item.Price.ToString("c")
                         </a>
 
 
@@ -121,4 +125,6 @@
     
     }
 </div>
+    </table> 
+    
     @*<div style="clear:both;">&nbsp;</div>*@
