@@ -68,18 +68,19 @@
         </div>
     </div>}
     </div>*@
-<div style="margin:auto">
+<div style=" display: flex; flex-wrap: wrap;justify-content:inherit;">
     @foreach (var item in Model)
     {
-        <div class="card-group" style="float:left;margin-right:5px;margin-bottom:5px;margin:auto;">
-            <div class="card" style="max-width: 17rem;">
+    
+        <div class="card-group" style="margin:10px;">
+            <div class="card" style="max-width: 16rem;">
                 <img src="@item.ImageURL" class="card-img-top" alt="@item.Name">
                 <div class="card-body">
                     <h5 class="card-title">@item.Name</h5>
                     <div class="card-body">
                         @*<p class="card-text">@item.Description</p>*@
                         <p class="card-text"><b>Cinema: </b>@item.Cinema.Name</p>
-                        <p class="card-text"><b>Category: </b>@item.MovieCategory</p>
+                        @*<p class="card-text"><b>Category: </b>@item.MovieCategory.Name</p>*@
 
                         <p class="card-text ">
                             <b>Status: </b>
@@ -106,18 +107,18 @@
 
 
                         @*<a class="btn btn-success text-white @((DateTime.Now > item.EndDate) ? "disabled" : "")"
-                               asp-controller="Orders"
-                               asp-action="AddItemToShoppingCart"
-                               asp-route-id="@item.Id">
-                                <i class="bi bi-cart-plus"></i> Add to Cart (Price @item.Price.ToString("c"))
-                            </a>*@
+                           asp-controller="Orders"
+                           asp-action="AddItemToShoppingCart"
+                           asp-route-id="@item.Id">
+                            <i class="bi bi-cart-plus"></i> Add to Cart (Price @item.Price.ToString("c"))
+                        </a>*@
                     </p>
                 </div>
             </div>
 
 
         </div>
-
+    
     }
 </div>
-    <div style="clear:both;">&nbsp;</div>
+    @*<div style="clear:both;">&nbsp;</div>*@

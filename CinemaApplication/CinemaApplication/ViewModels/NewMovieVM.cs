@@ -38,7 +38,7 @@ namespace CinemaApplication.Models
         public DateTime EndDate { get; set; }
 
         [Display(Name = "Select a category")]
-        [Required(ErrorMessage = "Movie category is required")]
+        //[Required(ErrorMessage = "Movie category is required")]
         public int MovieCategory { get; set; }
 
         //Relationships

@@ -20,7 +20,7 @@ namespace CinemaApplication.Models
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         [Display(Name = "Category")]
-        [Range(1, int.MaxValue, ErrorMessage = "You must choose a category")]
+        //[Range(1, int.MaxValue, ErrorMessage = "You must choose a category")]
         public int CategoryId { get; set; }
 
         [ForeignKey("CategoryId")]
