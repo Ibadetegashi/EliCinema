@@ -14,7 +14,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using CinemaApplication.Models;
 using CinemaApplication.Areas.Admin.Services;
-
+using Microsoft.AspNetCore.Http;
+using CinemaApplication.Cart;
 
 namespace CinemaApplication
 {
@@ -39,6 +40,14 @@ namespace CinemaApplication
             services.AddScoped<IProducersService, ProducersService>();
             services.AddScoped<ICinemasService, CinemasService>();
             services.AddScoped<IMoviesService, MoviesService>();
+            services.AddScoped<IOrdersService, OrdersService>();
+
+
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddScoped(sc => ShoppingCart.GetShoppingCart(sc));
+
+            services.AddSession();
+
             services.AddControllersWithViews();
             services.AddRazorPages();
         }
@@ -61,6 +70,7 @@ namespace CinemaApplication
             app.UseStaticFiles();
 
             app.UseRouting();
+            app.UseSession();
 
             app.UseAuthentication();
             app.UseAuthorization();
