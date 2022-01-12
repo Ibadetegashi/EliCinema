@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CinemaApplication.Controllersntrollers
+namespace CinemaApplication.Controllers
 {
 
     public class MoviesController : Controller

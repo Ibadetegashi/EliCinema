@@ -3,7 +3,11 @@
 @{
     ViewData["Title"] = "List of Producers";
 }
-
+<em><h3>Producers</h3></em>
+<a asp-action="Create">
+    <i class="bi bi-plus-circle"></i> Add New
+</a>
+<hr />
 @*<div class="row">
         <div class="col-md-8 offset-md-2">
 
@@ -45,7 +49,7 @@
         </div>
     </div>
     <br />*@
-<table id="myActorTable" class="table table-hover table-sm">
+<table id="myActorTable" class="table table-hover table-sm" data-page-length='5'>
     <thead>
         <tr>
             <th>
@@ -68,7 +72,7 @@
                     @item.Id
                 </td>
                 <td>
-                    <img class="rounded-circle" src="@item.ProfilePictureURL" alt="@item.FullName" style="max-width: 100px" />
+                    <img src="@item.ProfilePictureURL" alt="@item.FullName" style="max-width: 100px" />
                 </td>
                 <td>
                     @item.FullName
@@ -86,6 +90,6 @@
 
 
 
-@await Html.PartialAsync("_CreateItem", "Producers")
+@*@await Html.PartialAsync("_CreateItem", "Producers")*@
 <br />
 <br />

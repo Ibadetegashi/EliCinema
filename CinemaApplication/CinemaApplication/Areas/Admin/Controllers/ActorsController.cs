@@ -7,9 +7,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using CinemaApplication.Models;
 
+using Microsoft.AspNetCore.Authorization;
+using CinemaApplication.Data.Static;
+
 namespace CinemaApplication.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = UserRoles.Admin)]
 
     public class ActorsController : Controller
     {

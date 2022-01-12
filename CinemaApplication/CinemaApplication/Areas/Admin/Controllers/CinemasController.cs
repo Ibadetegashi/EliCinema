@@ -6,10 +6,13 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using CinemaApplication.Models;
 using CinemaApplication.Areas.Admin.Services;
+using CinemaApplication.Data.Static;
 
 namespace CinemaApplication.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = UserRoles.Admin)]
+
     public class CinemasController : Controller
     {
         private readonly ICinemasService service;

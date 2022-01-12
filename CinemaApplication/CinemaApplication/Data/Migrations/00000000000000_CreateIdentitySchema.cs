@@ -132,7 +132,7 @@ namespace CinemaApplication.Data.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
-
+            
             migrationBuilder.CreateTable(
                 name: "AspNetUserTokens",
                 columns: table => new

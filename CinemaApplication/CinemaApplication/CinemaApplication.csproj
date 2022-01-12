@@ -46,6 +46,18 @@
     <Compile Remove="Data\Migrations\20211226235944_Actor.Designer.cs" />
     <Compile Remove="Data\Migrations\20211230130700_ThirdInitial.cs" />
     <Compile Remove="Data\Migrations\20211230130700_ThirdInitial.Designer.cs" />
+    <Compile Remove="Data\Migrations\20220112015036_Identity_add.cs" />
+    <Compile Remove="Data\Migrations\20220112015036_Identity_add.Designer.cs" />
+    <Compile Remove="Data\Migrations\20220112015136_Identity_add.cs" />
+    <Compile Remove="Data\Migrations\20220112015136_Identity_add.Designer.cs" />
+    <Compile Remove="Data\Migrations\20220112153919_test.cs" />
+    <Compile Remove="Data\Migrations\20220112153919_test.Designer.cs" />
+    <Compile Remove="Data\Migrations\20220112160607_Test.cs" />
+    <Compile Remove="Data\Migrations\20220112160607_Test.Designer.cs" />
+    <Compile Remove="Data\Migrations\20220112164103_Test.cs" />
+    <Compile Remove="Data\Migrations\20220112164103_Test.Designer.cs" />
+    <Compile Remove="Data\Migrations\20220112165336_Test.cs" />
+    <Compile Remove="Data\Migrations\20220112165336_Test.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -54,6 +66,10 @@
     <None Include="Areas\Admin\Views\Cinemas\Details.cshtml" />
     <None Include="Areas\Admin\Views\Cinemas\Edit.cshtml" />
     <None Include="Areas\Admin\Views\Cinemas\Index.cshtml" />
+    <None Include="Views\Account\AccessDenied.cshtml" />
+    <None Include="Views\Account\Login.cshtml" />
+    <None Include="Views\Account\Register.cshtml" />
+    <None Include="Views\Account\RegisterCompleted.cshtml" />
     <None Include="Views\Pages\Page.cshtml" />
   </ItemGroup>
 

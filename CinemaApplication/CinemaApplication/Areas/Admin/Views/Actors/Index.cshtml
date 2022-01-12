@@ -5,7 +5,11 @@
 }
 
 
-
+<em><h3>Actors</h3></em>
+<a asp-action="Create">
+    <i class="bi bi-plus-circle"></i> Add New
+</a>
+<hr />
 @*<table  id="myTable" class="table table-bordered table-hover table-sm">
         <thead>
             <tr class="text-center">
@@ -44,7 +48,7 @@
 
     </table>*@
 <br />
-<table id="myActorTable" class="table table-hover table-sm">
+<table id="myActorTable" class="table table-hover table-sm" data-page-length='5'>
     <thead>
         <tr>
             <th>
@@ -67,7 +71,7 @@
                     @item.Id
                 </td>
                 <td>
-                    <img class="rounded-circle" src="@item.ProfilePictureURL" alt="@item.FullName" style="max-width: 100px" />
+                    <img src="@item.ProfilePictureURL" alt="@item.FullName" style="max-width: 100px" />
                 </td>
                 <td>
                     @item.FullName
@@ -86,6 +90,6 @@
 
 
 
-@await Html.PartialAsync("_CreateItem", "Actors")
+@*@await Html.PartialAsync("_CreateItem", "Actors")*@
 <br />
 <br />

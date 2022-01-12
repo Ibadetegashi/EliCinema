@@ -16,7 +16,7 @@
                     <th>Order ID</th>
                     <th>Items</th>
                     <th>Total</th>
-                    <th>User</th> 
+                 
                 </tr>
             </thead>
             <tbody>
@@ -28,18 +28,18 @@
                         <ul style="list-style-type:none">
                             @foreach (var item in order.OrderItems)
                             {
-                            <li>
-                                <div class="alert alert-info" role="alert">
-                                    <span class="badge bg-success">@item.Amount</span> [@item.Price.ToString("c")] - @item.Movie.Name
-                                </div>
-                            </li>
+                                <li>
+                                    <div class="alert alert-info" role="alert">
+                                        <span class="badge bg-success">@item.Amount</span> [@item.Price.ToString("c")] - @item.Movie.Name
+                                    </div>
+                                </li>
                             }
                         </ul>
                     </td>
                     <td class="align-middle">
                         @order.OrderItems.Select(m => m.Movie.Price * m.Amount).Sum().ToString("c")
                     </td>
-                    <td class="align-middle"> - </td>
+                   
                 </tr>
                 }
             </tbody>

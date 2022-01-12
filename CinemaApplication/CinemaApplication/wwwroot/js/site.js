@@ -38,6 +38,7 @@ $(document).ready(function () {
         //"scrollY": "600px",
         //"scrollCollapse": true,
         "paging": true,
-        "length":5
+
+ 
     });
 });

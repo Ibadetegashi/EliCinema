@@ -16,6 +16,7 @@ using CinemaApplication.Models;
 using CinemaApplication.Areas.Admin.Services;
 using Microsoft.AspNetCore.Http;
 using CinemaApplication.Cart;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace CinemaApplication
 {
@@ -34,8 +35,8 @@ namespace CinemaApplication
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
-            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+            //services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+            //    .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddScoped<IActorsService, ActorsService>();
             services.AddScoped<IProducersService, ProducersService>();
             services.AddScoped<ICinemasService, CinemasService>();
@@ -45,8 +46,15 @@ namespace CinemaApplication
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped(sc => ShoppingCart.GetShoppingCart(sc));
-
+            //Authentication and authorization
+            services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>();
+            services.AddMemoryCache();
             services.AddSession();
+            services.AddAuthentication(options =>
+            {
+                options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+            });
+          
 
             services.AddControllersWithViews();
             services.AddRazorPages();
@@ -93,9 +101,10 @@ namespace CinemaApplication
                 endpoints.MapRazorPages();
             });
             AppDbInitializer.Seed(app);
-           
+            AppDbInitializer.SeedUsersAndRolesAsync(app).Wait();
+
         }
-    
+
     }
 }
 

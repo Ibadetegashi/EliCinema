@@ -1,5 +1,7 @@
 ﻿using CinemaApplication.Data;
+using CinemaApplication.Data.Static;
 using CinemaApplication.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -10,6 +12,7 @@ using System.Threading.Tasks;
 namespace CinemaApplication.Areas.Admin.Controllers
 {
         [Area("Admin")]
+    [Authorize(Roles = UserRoles.Admin)]
 
     public class PagesController : Controller
     {

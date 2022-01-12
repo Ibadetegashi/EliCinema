@@ -10,7 +10,7 @@
     <script src="https://kit.fontawesome.com/e4ecf4b178.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4-4.1.1/jq-3.3.1/dt-1.10.23/b-1.6.5/fc-3.3.2/sc-2.0.3/sb-1.0.1/sp-1.2.2/sl-1.3.1/datatables.min.css" />
 </head>
-<body>
+<body style="background-color:darkred">
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
@@ -45,30 +45,30 @@
                     @await Component.InvokeAsync("ShoppingCartSummary")
                 </ul>
                 @*User profile section*@
-                <div class="dropdown">
-                    <button class="btn btn-outline-success dropdown-toggle" type="button" id="profile-btn" data-toggle="dropdown"
-                            aria-expanded="false">
-                        <i class="bi bi-person-badge"></i> Hello User!
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="profile-btn">
-                        <li>
-                            <a class="dropdown-item" asp-controller="Orders" asp-action="Index">
-                                <i class="bi bi-list"></i> Orders
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+            <div class="dropdown">
+
+
+                <ul class="dropdown-menu" aria-labelledby="profile-btn">
+                    <li>
+                        <a class="dropdown-item" asp-controller="Orders" asp-action="Index">
+                            <i class="bi bi-list"></i> Orders
+                        </a>
+                    </li>
+
+                </ul>
+                <partial name="_Identity.cshtml" />
+            </div>
 
             </div>
         </nav>
     </header>
-    <div class="container">
+    <div class="container" >
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="border-top footer text-muted" style="background-color:gray">
 
         <div class="container">
             &copy; 2021 - CinemaApplication - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>

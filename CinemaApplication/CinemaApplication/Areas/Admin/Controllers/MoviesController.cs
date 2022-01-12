@@ -1,5 +1,7 @@
 ﻿using CinemaApplication.Areas.Admin.Services;
+using CinemaApplication.Data.Static;
 using CinemaApplication.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
@@ -10,6 +12,8 @@ using System.Threading.Tasks;
 namespace CinemaApplication.Areas.Admin.Controllers
 {
     [Area("Admin")]
+
+    [Authorize(Roles = UserRoles.Admin)]
     public class MoviesController : Controller
     {
         private readonly IMoviesService _service;

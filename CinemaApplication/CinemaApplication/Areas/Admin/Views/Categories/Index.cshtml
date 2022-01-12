@@ -4,12 +4,14 @@
     ViewData["Title"] = "Categories";
 }
 
-<h1>Genres</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table  id="myTable" class="table table-bordered table-hover table-sm">
+<em><h3>Genres</h3></em>
+<a asp-action="Create">
+    <i class="bi bi-plus-circle"></i> Add New
+</a>
+<hr />
+
+<table id="myTable" class="table table-bordered table-hover table-sm" data-page-length='5'>
     <thead>
         <tr>
             <th>
@@ -24,26 +26,27 @@
     <tbody>
         @foreach (var item in Model)
         {
-        <tr id="id_@item.Id">
-            <td>
-                @item.Id
-            </td>
-            <td>
-                @item.Name
-            </td>
-            @*<td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a class="confirmDeletion" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>*@
-            <td class="align-middle" style="max-width:fit-content()">
-                <a class="btn btn-outline-primary" asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil-square"></i>Edit </a> |
-                <a class="btn btn-outline-info" asp-action="Details" asp-route-id="@item.Id"><i class="bi bi-eye"></i>Details </a> |
-                <a class="btn btn-danger text-white confirmDeletion" asp-action="Delete" asp-route-id="@item.Id"><i class="bi bi-trash"></i>Delete </a>
-            </td>
-        </tr>
+            <tr id="id_@item.Id">
+                <td>
+                    @item.Id
+                </td>
+                <td>
+                    @item.Name
+                </td>
+                @*<td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a class="confirmDeletion" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>*@
+                <td class="align-middle" style="max-width:fit-content()">
+                    <a class="btn btn-outline-primary" asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil-square"></i>Edit </a> |
+                    <a class="btn btn-outline-info" asp-action="Details" asp-route-id="@item.Id"><i class="bi bi-eye"></i>Details </a> |
+                    <a class="btn btn-danger text-white confirmDeletion" asp-action="Delete" asp-route-id="@item.Id"><i class="bi bi-trash"></i>Delete </a>
+                </td>
+            </tr>
         }
     </tbody>
 </table>
+
 <br />
 <br />
 
