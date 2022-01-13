@@ -10,11 +10,12 @@
     <script src="https://kit.fontawesome.com/e4ecf4b178.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4-4.1.1/jq-3.3.1/dt-1.10.23/b-1.6.5/fc-3.3.2/sc-2.0.3/sb-1.0.1/sp-1.2.2/sl-1.3.1/datatables.min.css" />
 </head>
-<body style="background-color:darkred">
+<body >
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">ELI<i class="fas fa-film" ></i></a>
+                <a class="navbar-brand" asp-controller="Movies" asp-action="Index"><i class='fas fa-film fa-spin fa-x'>ELI</i></a>
+
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -23,12 +24,12 @@
                     <partial name="_LoginPartial" />
                     <ul class="navbar-nav flex-grow-1">
                         @*<li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>*@
-                      
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                </li>*@
+
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Movies" asp-action="Index">Movies</a>
                         </li>
@@ -45,20 +46,20 @@
                     @await Component.InvokeAsync("ShoppingCartSummary")
                 </ul>
                 @*User profile section*@
-            <div class="dropdown">
+                <div class="dropdown">
 
 
-                <ul class="dropdown-menu" aria-labelledby="profile-btn">
-                    <li>
-                        <a class="dropdown-item" asp-controller="Orders" asp-action="Index">
-                            <i class="bi bi-list"></i> Orders
-                        </a>
-                    </li>
+                    <ul class="dropdown-menu" aria-labelledby="profile-btn">
+                        <li>
+                            <a class="dropdown-item" asp-controller="Orders" asp-action="Index">
+                                <i class="bi bi-list"></i> Orders
+                            </a>
+                        </li>
 
-                </ul>
+                    </ul>
+
+                </div>
                 <partial name="_Identity.cshtml" />
-            </div>
-
             </div>
         </nav>
     </header>
@@ -68,7 +69,7 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted" style="background-color:gray">
+    <footer class="border-top footer text-muted" >
 
         <div class="container">
             &copy; 2021 - CinemaApplication - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>

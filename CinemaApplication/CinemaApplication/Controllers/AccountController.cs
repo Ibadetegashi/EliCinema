@@ -9,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CinemaApplication.Controllers
 {
@@ -25,7 +26,7 @@ namespace CinemaApplication.Controllers
             _context = context;
         }
 
-
+        [Authorize]
         public async Task<IActionResult> Users()
         {
             var users = await _context.Users.ToListAsync();
@@ -42,22 +43,22 @@ namespace CinemaApplication.Controllers
             if (!ModelState.IsValid) return View(loginVM);
 
             var user = await _userManager.FindByEmailAsync(loginVM.EmailAddress);
-            var admin = await _userManager.IsInRoleAsync(user,"Admin");
+           
 
             if (user != null)
             {
+                var admin = await _userManager.IsInRoleAsync(user, "Admin");
                 var passwordCheck = await _userManager.CheckPasswordAsync(user, loginVM.Password);
                 if (passwordCheck)
                 {
                     var result = await _signInManager.PasswordSignInAsync(user, loginVM.Password, false, false);
-                    if (result.Succeeded && admin )
+                    if (result.Succeeded)
                     {
-                        
-                            return RedirectToAction("Index", "Movies", new { area = "Admin" });
+                        if (admin)
+                        {
 
-                    }
-                    else
-                    {
+                            return RedirectToAction("Index", "Movies", new { area = "Admin" });
+                        }
                         return RedirectToAction("Index", "Movies");
                     }
                 }

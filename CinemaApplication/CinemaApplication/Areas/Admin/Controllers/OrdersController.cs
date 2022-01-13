@@ -34,6 +34,8 @@ namespace CinemaApplication.Controllers
             string userRole = User.FindFirstValue(ClaimTypes.Role);
 
             var orders = await _ordersService.GetOrdersByUserIdAndRoleAsync(userId, userRole);
+          
+           
             return View(orders);
         }
 

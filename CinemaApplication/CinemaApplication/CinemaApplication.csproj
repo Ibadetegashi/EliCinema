@@ -61,6 +61,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Remove="Areas\Admin\Views\Account\RegisterCompleted.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Areas\Admin\Views\Account\RegisterCompleted.cshtml" />
     <None Include="Areas\Admin\Views\Cinemas\Create.cshtml" />
     <None Include="Areas\Admin\Views\Cinemas\Delete.cshtml" />
     <None Include="Areas\Admin\Views\Cinemas\Details.cshtml" />

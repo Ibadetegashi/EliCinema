@@ -104,10 +104,15 @@ namespace CinemaApplication.Areas.Admin.Controllers
         public async Task<IActionResult> Delete(int id)
         {
             Category category = await context.Categories.FindAsync(id);
+            var movie = await context.Movies.Where(n => n.CategoryId == id).ToListAsync();
 
             if (category == null)
             {
                 TempData["Error"] = "The category does not exist!";
+            }
+            else if (movie.Count!=0)
+            {
+                TempData["Error"] = "Can not delete this category, cause there are movies with this category!";
             }
             else
             {

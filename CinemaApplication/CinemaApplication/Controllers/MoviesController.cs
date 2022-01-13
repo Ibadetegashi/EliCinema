@@ -20,11 +20,11 @@ namespace CinemaApplication.Controllers
         }
         public async Task<IActionResult> Filter(string searchString)
         {
-            var allMovies = await _service.GetAllAsync(n => n.Cinema);
+            var allMovies = await _service.GetAllAsync(n => n.MovieCategory);
 
             if (!string.IsNullOrEmpty(searchString))
             {
-                var filteredResult = allMovies.Where(n => n.Name.ToLower().Contains(searchString.ToLower()) || n.Description.ToLower().Contains(searchString.ToLower())).ToList();
+                var filteredResult = allMovies.Where(n => n.Name.ToLower().Contains(searchString.ToLower()) || n.MovieCategory.Name.ToLower().Contains(searchString.ToLower())).ToList();
 
                 var filteredResultNew = allMovies.Where(n => string.Equals(n.Name, searchString, StringComparison.CurrentCultureIgnoreCase) || string.Equals(n.Description, searchString, StringComparison.CurrentCultureIgnoreCase)).ToList();
 

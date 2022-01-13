@@ -26,7 +26,7 @@ namespace CinemaApplication.Areas.Admin.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var allMovies = await _service.GetAllAsync(n=>n.Cinema);
+            var allMovies = await _service.GetAllAsync(n=>n.MovieCategory);
             return View(allMovies);
         }
 

@@ -16,9 +16,10 @@ namespace CinemaApplication.Areas.Admin.Services
             _context = context;
         }
 
-        public async Task<List<Order>> GetOrdersByUserIdAndRoleAsync(string userId, string userRole)
+        public  async Task<List<Order>> GetOrdersByUserIdAndRoleAsync(string userId, string userRole)
         {
             var orders = await _context.Orders.Include(n => n.OrderItems).ThenInclude(n => n.Movie).Include(n => n.User).ToListAsync();
+          
 
             if (userRole != "Admin")
             {
@@ -27,6 +28,13 @@ namespace CinemaApplication.Areas.Admin.Services
 
             return orders;
         }
+        //public async Task<IEnumerable<T>> GetAllAsync(params Expression<Func<T, object>>[] includeProperties)
+        //{
+        //    IQueryable<T> query = _context.Set<T>();
+        //    query = includeProperties.Aggregate(query, (current, includeProperty) => current.Include(includeProperty));
+        //    return await query.ToListAsync();
+
+        //}
 
         public async Task StoreOrderAsync(List<ShoppingCartItem> items, string userId, string userEmailAddress)
         {

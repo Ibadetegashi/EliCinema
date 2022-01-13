@@ -10,7 +10,7 @@
             <h4>List of all your orders</h4>
         </p>
 
-        <table class="table">
+        <table id="myActorTable" class="table table-hover table-sm" data-page-length='5'>
             <thead>
                 <tr>
                     <th>Order ID</th>
@@ -28,22 +28,31 @@
                         <ul style="list-style-type:none">
                             @foreach (var item in order.OrderItems)
                             {
-                            <li>
-                                <div class="alert alert-info" role="alert">
-                                    <span class="badge bg-success">@item.Amount</span> [@item.Price.ToString("c")] - @item.Movie.Name
-                                </div>
-                            </li>
+                                <li>
+                                    <div class="alert alert-info" role="alert">
+                                        <span class="badge bg-success">@item.Amount</span> [@item.Price.ToString("c")] - @item.Movie.Name
+                                    </div>
+                                </li>
                             }
                         </ul>
                     </td>
                     <td class="align-middle">
                         @order.OrderItems.Select(m => m.Movie.Price * m.Amount).Sum().ToString("c")
                     </td>
-                    <td class="align-middle"> 
-                        @order.User.FullName
+
+                   
                     
-                    </td>
-                </tr>
+                <td class="align-middle">
+
+                    @order.User.FullName
+                </td>
+
+                           
+
+
+
+                        
+                    </tr>
                 }
             </tbody>
         </table>

@@ -2742,3 +2742,4 @@ C:\Users\ibade\Source\Repos\12janar\CinemaApplication\CinemaApplication\obj\Debu
 C:\Users\ibade\Source\Repos\12janar\CinemaApplication\CinemaApplication\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Orders\Index.cshtml.g.cs
 C:\Users\ibade\Source\Repos\12janar\CinemaApplication\CinemaApplication\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Orders\OrderCompleted.cshtml.g.cs
 C:\Users\ibade\Source\Repos\12janar\CinemaApplication\CinemaApplication\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Orders\ShoppingCart.cshtml.g.cs
+C:\Users\ibade\Source\Repos\12janar\CinemaApplication\CinemaApplication\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Account\Register.cshtml.g.cs

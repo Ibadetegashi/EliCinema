@@ -4,18 +4,20 @@
     ViewData["Title"] = "List of all users";
 }
 
-<div class="row">
-    <div class="col-md-6 offset-3">
+
+    <div >
         <p>
             <h4>List of all users</h4>
         </p>
 
-        <table class="table">
+        <table id="myTable" class="table table-bordered table-hover table-sm" data-page-length='5'>
             <thead>
                 <tr class="text-center">
                     <th>@Html.DisplayNameFor(model => model.FullName)</th>
                     <th>@Html.DisplayNameFor(model => model.UserName)</th>
                     <th>@Html.DisplayNameFor(model => model.Email)</th>
+                    <th></th>
+                    
                 </tr>
             </thead>
             <tbody>
@@ -30,7 +32,17 @@
                     </td>
                     <td class="align-middle">
                         @Html.DisplayFor(modelItem => item.Email)
+
+
                     </td>
+                   
+                    <td class="align-middle" style="max-width:fit-content()">
+                        <a class="btn btn-outline-primary" asp-area="Admin" asp-action="MakeAdmin" asp-route-id="@item.Id"><i class="bi bi-pencil-square"></i>Make Admin </a> |
+
+                        <a class="btn btn-danger text-white confirmDeletion" asp-area="Admin" asp-action="Delete" asp-route-id="@item.Id "><i class="bi bi-trash"></i>Delete </a>
+
+                    </td>
+
                 </tr>
                 }
             </tbody>
@@ -38,4 +50,3 @@
         </table>
 
     </div>
-</div>
