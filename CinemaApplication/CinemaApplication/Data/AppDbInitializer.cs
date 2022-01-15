@@ -262,6 +262,8 @@ namespace CinemaApplication.Data
                     await roleManager.CreateAsync(new IdentityRole(UserRoles.Admin));
                 if (!await roleManager.RoleExistsAsync(UserRoles.User))
                     await roleManager.CreateAsync(new IdentityRole(UserRoles.User));
+                if (!await roleManager.RoleExistsAsync(UserRoles.Super))
+                    await roleManager.CreateAsync(new IdentityRole(UserRoles.Super));
 
                 //Users
                 var userManager = serviceScope.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
@@ -297,6 +299,25 @@ namespace CinemaApplication.Data
                     await userManager.CreateAsync(newAppUser, "Coding@1234?");
                     await userManager.AddToRoleAsync(newAppUser, UserRoles.User);
                 }
+
+                string appManagerEmail = "manager@eli.com";
+
+                var appManager = await userManager.FindByEmailAsync(appManagerEmail);
+                if (appManager == null)
+                {
+                    var newManager = new ApplicationUser()
+                    {
+                        FullName = "Super",
+                        UserName = "Super",
+                        Email = appManagerEmail,
+                        EmailConfirmed = true
+                    };
+                    await userManager.CreateAsync(newManager, "Coding@1234?");
+                    await userManager.AddToRoleAsync(newManager, UserRoles.Super);
+                }
+
+
+
             }
         }
     }

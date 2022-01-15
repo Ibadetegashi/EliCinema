@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using CinemaApplication.Data.Static;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -11,5 +12,6 @@ namespace CinemaApplication.Models
     {
         [Display(Name = "Full name")]
         public string FullName { get; set; }
+   
     }
 }

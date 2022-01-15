@@ -10,13 +10,16 @@
             <h4>List of all your orders</h4>
         </p>
 
-        <table id="myActorTable" class="table table-hover table-sm" data-page-length='5'>
+        <table id="myTable" class="table table-striped table-hover table-sm" data-page-length='5'>
             <thead>
                 <tr>
                     <th>Order ID</th>
-                    <th>Items</th>
+                    <th>Movies</th>
                     <th>Total</th>
-                    <th>User</th> 
+                    <th>User</th>
+                  
+                       <th></th>
+                    
                 </tr>
             </thead>
             <tbody>
@@ -28,9 +31,11 @@
                         <ul style="list-style-type:none">
                             @foreach (var item in order.OrderItems)
                             {
+                                <img src="@item.Movie.ImageURL" width="100" alt="" />
+                                <br />
                                 <li>
-                                    <div class="alert alert-info" role="alert">
-                                        <span class="badge bg-success">@item.Amount</span> [@item.Price.ToString("c")] - @item.Movie.Name
+                                    <div class="" role="alert">
+                                        <span class="badge badge-pill badge-light">@item.Amount</span> [@item.Price.ToString("c")] - @item.Movie.Name
                                     </div>
                                 </li>
                             }
@@ -46,12 +51,12 @@
 
                     @order.User.FullName
                 </td>
+                   
+                <td>
+                    <a class="btn btn-danger text-white confirmDeletion  @((User.IsInRole("Admin")) ? "disabled" : "")" asp-action="Delete"  asp-route-id="@order.Id"><i class="bi bi-trash"></i> </a>
 
-                           
-
-
-
-                        
+                </td>
+                    
                     </tr>
                 }
             </tbody>

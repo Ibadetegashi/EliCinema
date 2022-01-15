@@ -48,6 +48,7 @@ namespace CinemaApplication.Controllers
             if (user != null)
             {
                 var admin = await _userManager.IsInRoleAsync(user, "Admin");
+                var super = await _userManager.IsInRoleAsync(user, UserRoles.Super);
                 var passwordCheck = await _userManager.CheckPasswordAsync(user, loginVM.Password);
                 if (passwordCheck)
                 {
@@ -58,6 +59,10 @@ namespace CinemaApplication.Controllers
                         {
 
                             return RedirectToAction("Index", "Movies", new { area = "Admin" });
+                        }else if (super)
+                        {
+                            return RedirectToAction("Users", "Account", new { area = "Admin" });
+
                         }
                         return RedirectToAction("Index", "Movies");
                     }

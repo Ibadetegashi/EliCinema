@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace CinemaApplication.Controllers
 {
     [Area("Admin")]
-    [Authorize(Roles = UserRoles.Admin)]
+    [Authorize(Roles = UserRoles.Both)]
 
     public class OrdersController : Controller
     {
@@ -86,5 +86,30 @@ namespace CinemaApplication.Controllers
 
             return View("OrderCompleted");
         }
+
+        public async Task<IActionResult> Delete(int id)
+        {
+          
+
+            var order = await _ordersService.GetOrderByIdAsync(id);
+            if (order == null) return View("NotFound");
+
+            if (order == null)
+            {
+                TempData["Error"] = "The order does not exist!";
+            }
+          
+            else
+            {
+                await _ordersService.DeleteAsync(id);
+
+                
+
+                TempData["Success"] = "The order has been deleted!";
+            }
+
+            return RedirectToAction("Index");
+        }
+
     }
 }

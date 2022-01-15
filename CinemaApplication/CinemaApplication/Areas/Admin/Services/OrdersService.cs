@@ -1,6 +1,7 @@
 ﻿using CinemaApplication.Data;
 using CinemaApplication.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,12 +22,13 @@ namespace CinemaApplication.Areas.Admin.Services
             var orders = await _context.Orders.Include(n => n.OrderItems).ThenInclude(n => n.Movie).Include(n => n.User).ToListAsync();
           
 
-            if (userRole != "Admin")
+            if (userRole == "Admin" || userRole=="Super" )
             {
-                orders = orders.Where(n => n.UserId == userId).ToList();
-            }
+                return orders;
 
-            return orders;
+            }
+         return   orders = orders.Where(n => n.UserId == userId).ToList();
+
         }
         //public async Task<IEnumerable<T>> GetAllAsync(params Expression<Func<T, object>>[] includeProperties)
         //{
@@ -58,6 +60,22 @@ namespace CinemaApplication.Areas.Admin.Services
                 await _context.OrderItems.AddAsync(orderItem);
             }
             await _context.SaveChangesAsync();
+        }
+        public async Task DeleteAsync(int id)
+        {
+            var entity = await _context.Set<Order>().FirstOrDefaultAsync(n => n.Id == id);
+            EntityEntry entityEntry = _context.Entry<Order>(entity);
+            entityEntry.State = EntityState.Deleted;
+
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task<List<Order>> GetOrderByIdAsync(int id)
+        {
+            var orders = await _context.Orders.Include(n => n.OrderItems).ThenInclude(n => n.Movie).Include(n => n.User).ToListAsync();
+
+
+            return orders;
         }
     }
 }

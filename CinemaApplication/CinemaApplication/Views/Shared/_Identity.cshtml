@@ -20,7 +20,7 @@
                                                 </button>
                                                 <ul class="dropdown-menu" aria-labelledby="profile-btn">
                                                     <li>
-                                                        @if (User.IsInRole("Admin"))
+                                                        @if (User.IsInRole("Admin") || User.IsInRole("Super"))
                                                         {
                                                     <a class="dropdown-item" asp-area="Admin" asp-controller="Orders" asp-action="Index">
                                                         <i class="bi bi-list"></i> Orders
@@ -34,7 +34,7 @@
                 }
                                                                     </li>
 
-                                                    @if (User.IsInRole("Admin"))
+                                                    @if (User.IsInRole("Admin") || User.IsInRole("Super"))
                                                     {
                                     <li>
                                         <a class="dropdown-item" asp-area="Admin" asp-controller="Account" asp-action="Users">

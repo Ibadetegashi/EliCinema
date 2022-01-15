@@ -9,5 +9,7 @@ namespace CinemaApplication.Data.Static
     {
         public const string Admin = "Admin";
         public const string User = "User";
+        public const string Super = "Super";
+        public const string Both = Admin + "," + Super;
     }
 }

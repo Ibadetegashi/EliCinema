@@ -76,6 +76,7 @@ namespace CinemaApplication.Area.Admin.Controllers
 
             await _ordersService.StoreOrderAsync(items, userId, userEmailAddress);
             await _shoppingCart.ClearShoppingCartAsync();
+          
 
             return View("OrderCompleted");
         }

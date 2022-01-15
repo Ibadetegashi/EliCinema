@@ -334,7 +334,7 @@ progress {
 }
 
 [type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
+  -webkit-appearance:none;
 }
 
 ::-webkit-file-upload-button {
@@ -4840,6 +4840,7 @@ input[type="button"].btn-block {
   padding-left: 0;
   list-style: none;
   border-radius: 0.25rem;
+
 }
 
 .page-link {
@@ -4849,7 +4850,7 @@ input[type="button"].btn-block {
   margin-left: -1px;
   line-height: 1.25;
   color: #007bff;
-  background-color: #fff;
+  background-color: #ffc107;
   border: 1px solid #dee2e6;
 }
 
@@ -4881,7 +4882,7 @@ input[type="button"].btn-block {
 .page-item.active .page-link {
   z-index: 1;
   color: #fff;
-  background-color: #007bff;
+  background-color: #dc3545;
   border-color: #007bff;
 }
 

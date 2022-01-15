@@ -11,8 +11,12 @@ namespace CinemaApplication.Areas.Admin.Services
     {
         Task StoreOrderAsync(List<ShoppingCartItem> items, string userId, string userEmailAddress);
         Task<List<Order>> GetOrdersByUserIdAndRoleAsync(string userId, string userRole);
-       // Task<IEnumerable<Order>> GetAllAsync(params Expression<Func<Order, object>>[] includeProperties);
-        
-           
+        // Task<IEnumerable<Order>> GetAllAsync(params Expression<Func<Order, object>>[] includeProperties);
+        Task<List<Order>> GetOrderByIdAsync(int id);
+        Task DeleteAsync(int id);
+
+
+
+
     }
 }

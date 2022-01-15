@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 namespace CinemaApplication.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Authorize(Roles = UserRoles.Admin)]
+    [Authorize(Roles=UserRoles.Both)]
 
     public class AccountController : Controller
     {
@@ -49,6 +49,7 @@ namespace CinemaApplication.Areas.Admin.Controllers
             if (user != null)
             {
                 var admin = await _userManager.IsInRoleAsync(user, "Admin");
+                var super = await _userManager.IsInRoleAsync(user, UserRoles.Super);
                 var passwordCheck = await _userManager.CheckPasswordAsync(user, loginVM.Password);
                 if (passwordCheck)
                 {
@@ -59,6 +60,10 @@ namespace CinemaApplication.Areas.Admin.Controllers
                         {
 
                             return RedirectToAction("Index", "Movies", new { area = "Admin" });
+                        }else if (super)
+                        {
+                            return RedirectToAction("Users", "Account", new { area = "Admin" });
+
                         }
                         return RedirectToAction("Index", "Movies");
                     }
@@ -117,19 +122,21 @@ namespace CinemaApplication.Areas.Admin.Controllers
             ApplicationUser user = await _context.Users.FindAsync(id);
             var orders = await _context.Orders.Where(n => n.UserId==id).ToListAsync();
             var admin = await _userManager.IsInRoleAsync(user, "Admin");
+            
 
 
-
+            
             if (orders.Count!=0)
             {
 
 
                 TempData["Error"] = "The user has orders !";
             }
-            else if (admin)
-            {
-                TempData["Error"] = "The user is admin!";
-            }
+            //else if (admin)
+            //{
+            //    TempData["Error"] = "The user is admin!";
+            //}
+           
             else
             {
                 
@@ -160,9 +167,29 @@ namespace CinemaApplication.Areas.Admin.Controllers
             return RedirectToAction("Users");
         }
 
-      
+        public async Task<IActionResult> CheckRole(string id)
+        {
+            ApplicationUser user = await _context.Users.FindAsync(id);
+            var admin = await _userManager.IsInRoleAsync(user, "Admin");
+           
+            if (admin)
+            {
+                TempData["Info"] = "The user is Admin!";
+
+            }
+            else
+            {
+                TempData["Info"] = "The user is just User!";
+
+            }
+
+            return RedirectToAction("Users");
+
+        }
+
+
 
     }
-     
-    
+
+
 }
