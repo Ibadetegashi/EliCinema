@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
+
 namespace CinemaApplication.Areas.Admin.Controllers
 {
     [Area("Admin")]
@@ -155,15 +156,25 @@ namespace CinemaApplication.Areas.Admin.Controllers
             ApplicationUser user = await _context.Users.FindAsync(id);
             var admin = await _userManager.IsInRoleAsync(user, "Admin");
 
-            if (!admin) {
+         
                 await _userManager.AddToRoleAsync(user, UserRoles.Admin);
-                TempData["Success"] = "The user now is Admin!";
-            }
-            else
-            {
-                TempData["Error"] = "The user is already admin!";
-            }
+                TempData["Success"] = user.FullName+ " now is Admin!";
+            
+            //else
+            //{
+            //    TempData["Error"] = "The user is already admin!";
+            //}
 
+            return RedirectToAction("Users");
+        }
+        public async Task<IActionResult> MakeUser(string id)
+        {
+            ApplicationUser user = await _context.Users.FindAsync(id);
+                      
+                await _userManager.RemoveFromRoleAsync(user, UserRoles.Admin);
+            
+                TempData["Success"] = user.FullName+" now is just User!";
+                     
             return RedirectToAction("Users");
         }
 

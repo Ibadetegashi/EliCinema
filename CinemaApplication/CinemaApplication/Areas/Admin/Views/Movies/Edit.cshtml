@@ -67,7 +67,7 @@
                                 <span asp-validation-for="ActorIds" class="text-danger"></span>
                             </div>
                         </div>
-                        <div class="col-md-12">
+                        <div class="">
                             <div class="form-group">
                                 <label asp-for="Description" class="control-label"></label>
                                 <textarea asp-for="Description" class="form-control"></textarea>
@@ -104,5 +104,8 @@
             var output = document.getElementById("ImageUrlPreview");
             output.src = $(this).val();
         })
+    </script>
+    <script>
+        CKEDITOR.replace("Description");
     </script>
 }

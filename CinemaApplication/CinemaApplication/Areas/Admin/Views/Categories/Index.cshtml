@@ -11,7 +11,7 @@
 </a>
 <hr />
 
-<table id="myGenreTable" class="table table-bordered table-hover table-sm display" >
+<table id="myGenreTable" class="table table-hover  table-striped table-sm display" >
     <thead>
         <tr>
             <th>
@@ -55,7 +55,7 @@
 
 @section Scripts {
     <script>
-        $("table#categories tbody").sortable({
+        $("table#myGenreTable tbody").sortable({
             items: "tr:not(.home)",
             placeholder: "ui-state-highlight",
             update: function () {

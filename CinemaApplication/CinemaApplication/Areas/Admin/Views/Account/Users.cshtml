@@ -16,6 +16,7 @@
                     <th>@Html.DisplayNameFor(model => model.FullName)</th>
                     <th>@Html.DisplayNameFor(model => model.UserName)</th>
                     <th>@Html.DisplayNameFor(model => model.Email)</th>
+                  
                     <th></th>
                     
                 </tr>
@@ -32,8 +33,8 @@
                     </td>
                     <td class="align-middle">
                         @Html.DisplayFor(modelItem => item.Email)
-
-
+                        @*@User.Identity.Equals(item.FullName).CompareTo(User.IsInRole("Admin"))*@
+                         
                     </td>
                    
                     <td class="align-middle" style="max-width:fit-content()">
@@ -49,13 +50,15 @@
                             @if (!item.FullName.Equals("Super"))
                             {
 
-                                <a class="btn btn-outline-warning confirmAdmin" asp-area="Admin" asp-action="MakeAdmin" asp-route-id="@item.Id"><i class="bi bi-pencil-square"></i>Make Admin</a>
+                                <a class="btn btn-outline-primary " asp-area="Admin" asp-action="MakeAdmin" asp-route-id="@item.Id"><i class="bi bi-pencil-square"></i>Make Admin</a>
+                                <a class="btn btn-outline-primary " asp-area="Admin" asp-action="MakeUser" asp-route-id="@item.Id"><i class="bi bi-pencil-square"></i>Make User</a>
                                 <a class="btn btn-outline-danger  confirmDeletion" asp-area="Admin" asp-action="Delete" asp-route-id="@item.Id "><i class="bi bi-trash"></i> </a>
 
 
                             }
                         }
                     </td>
+               
 
                 </tr>
                 }

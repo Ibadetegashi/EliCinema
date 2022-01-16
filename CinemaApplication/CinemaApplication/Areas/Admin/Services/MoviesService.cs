@@ -19,14 +19,14 @@ namespace CinemaApplication.Areas.Admin.Services
         {
             _context = context;
         }
-        public async Task DeleteAsync(int id)
-        {
-            var entity = await _context.Set<Movie>().FirstOrDefaultAsync(n => n.Id == id);
-            EntityEntry entityEntry = _context.Entry<Movie>(entity);
-            entityEntry.State = EntityState.Deleted;
+        //public async Task DeleteAsync(int id)
+        //{
+        //    var entity = await _context.Set<Movie>().FirstOrDefaultAsync(n => n.Id == id);
+        //    EntityEntry entityEntry = _context.Entry<Movie>(entity);
+        //    entityEntry.State = EntityState.Deleted;
 
-            await _context.SaveChangesAsync();
-        }
+        //    await _context.SaveChangesAsync();
+        //}
 
         public async Task<Movie> GetMovieByIdAsync(int id)
         {

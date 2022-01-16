@@ -14,6 +14,6 @@ namespace CinemaApplication.Areas.Admin.Services
         Task<NewMovieDropdownsVM> GetNewMovieDropdownsValues();
         Task AddNewMovieAsync(NewMovieVM data);
         Task UpdateMovieAsync(NewMovieVM data);
-        Task DeleteAsync(int id);
+      //  Task DeleteAsync(int id);
     }
 }

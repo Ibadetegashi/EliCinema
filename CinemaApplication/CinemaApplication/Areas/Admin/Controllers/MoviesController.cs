@@ -13,7 +13,7 @@ namespace CinemaApplication.Areas.Admin.Controllers
 {
     [Area("Admin")]
 
-    [Authorize(Roles = UserRoles.Admin)]
+    [Authorize(Roles = UserRoles.Both)]
     public class MoviesController : Controller
     {
         private readonly IMoviesService _service;

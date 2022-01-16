@@ -12,7 +12,7 @@ namespace CinemaApplication.Models.Users
         public IActionResult Index()
         {
             var users = GetUsers();
-
+            
             ViewData["Users"] = users;
 
             return View();

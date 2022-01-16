@@ -3005,3 +3005,13 @@ C:\Users\ibade\Source\Repos\EliCinema\CinemaApplication\CinemaApplication\obj\De
 C:\Users\ibade\Source\Repos\EliCinema\CinemaApplication\CinemaApplication\obj\Debug\netcoreapp3.1\CinemaApplication.genruntimeconfig.cache
 C:\Users\ibade\Source\Repos\EliCinema\CinemaApplication\CinemaApplication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_NotificationPartial.cshtml.g.cs
 C:\Users\ibade\Source\Repos\EliCinema\CinemaApplication\CinemaApplication\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Movies\Create.cshtml.g.cs
+C:\Users\ibade\Source\Repos\EliCinema\CinemaApplication\CinemaApplication\bin\Debug\netcoreapp3.1\Namotion.Reflection.dll
+C:\Users\ibade\Source\Repos\EliCinema\CinemaApplication\CinemaApplication\bin\Debug\netcoreapp3.1\NJsonSchema.dll
+C:\Users\ibade\Source\Repos\EliCinema\CinemaApplication\CinemaApplication\bin\Debug\netcoreapp3.1\NJsonSchema.Yaml.dll
+C:\Users\ibade\Source\Repos\EliCinema\CinemaApplication\CinemaApplication\bin\Debug\netcoreapp3.1\NSwag.Annotations.dll
+C:\Users\ibade\Source\Repos\EliCinema\CinemaApplication\CinemaApplication\bin\Debug\netcoreapp3.1\NSwag.AspNetCore.dll
+C:\Users\ibade\Source\Repos\EliCinema\CinemaApplication\CinemaApplication\bin\Debug\netcoreapp3.1\NSwag.Core.dll
+C:\Users\ibade\Source\Repos\EliCinema\CinemaApplication\CinemaApplication\bin\Debug\netcoreapp3.1\NSwag.Core.Yaml.dll
+C:\Users\ibade\Source\Repos\EliCinema\CinemaApplication\CinemaApplication\bin\Debug\netcoreapp3.1\NSwag.Generation.dll
+C:\Users\ibade\Source\Repos\EliCinema\CinemaApplication\CinemaApplication\bin\Debug\netcoreapp3.1\NSwag.Generation.AspNetCore.dll
+C:\Users\ibade\Source\Repos\EliCinema\CinemaApplication\CinemaApplication\bin\Debug\netcoreapp3.1\YamlDotNet.dll

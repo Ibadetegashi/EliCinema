@@ -8,8 +8,8 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace CinemaApplication.Controllers
-{
-
+{ 
+   
     public class MoviesController : Controller
     {
         private readonly IMoviesService _service;
@@ -33,7 +33,7 @@ namespace CinemaApplication.Controllers
 
             return View("Index", allMovies);
         }
-
+        [HttpGet]
         public async Task<IActionResult> Index()
         {
             var allMovies = await _service.GetAllAsync(n=>n.Cinema);

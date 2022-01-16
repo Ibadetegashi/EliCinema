@@ -14,7 +14,7 @@ using CinemaApplication.Data.Static;
 namespace CinemaApplication.Controllers
 {
     [Area("Admin")]
-    [Authorize(Roles = UserRoles.Admin)]
+    [Authorize(Roles = UserRoles.Both)]
 
     public class ProducersController : Controller
     {
