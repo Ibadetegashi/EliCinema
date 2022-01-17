@@ -4,84 +4,73 @@
     ViewData["Title"] = "Movie details";
 }
 
-<div class="row">
-    <div class="col-md-8 offset-2">
-        <div class="card mb-12">
-            <div class="row g-0">
-                <div class="col-md-12">
-                    <div class="card-header text-white bg-info">
-                        <p class="card-text">
-                            <h5 class="card-title">
-                                @Model.Name
-                            </h5>
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <img src="@Model.ImageURL" width="100%" alt="@Model.Name">
-                </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <p class="card-text">@Html.Raw(Model.Description)</p>
-                        <p class="card-text">
-                            <b>Cinema: </b>
-                          
-                                @Model.Cinema.Name
-                            
-                        </p>
-                        <p class="card-text">
-                            <b>Producer: </b>
-                                @Model.Producer.FullName
-                            
-                        </p>
-                        <p class="card-text"><b>Category: </b>@Model.MovieCategory.Name</p>
-                        <p class="card-text"><b>Start Date: </b>@Model.StartDate.ToString("dd MMM yy")</p>
-                        <p class="card-text"><b>End Date: </b>@Model.EndDate.ToString("dd MMM yy")</p>
-                        <p class="card-text ">
-                            <b>Status: </b>
-                            @if (DateTime.Now >= Model.StartDate && DateTime.Now <= Model.EndDate)
-                            {
-                                <span class="badge bg-success text-white">AVAILABLE</span>
-                            }
-                            else if (DateTime.Now > Model.EndDate)
-                            {
-                                <span class="badge bg-danger text-white">EXPIRED</span>
-                            }
-                            else
-                            {
-                                <span class="badge bg-primary text-white">UPCOMING</span>
-                            }
-                        </p>
-                        <p class="card-text">
-                            <b>Actors: </b>
-                            <hr />
-                            <div class="row">
-                                @foreach (var actor in Model.Actors_Movies)
-                                {
-                                    <div class="column text-center">
-                                        <img class="border-info rounded-circle" src="@actor.Actor.ProfilePictureURL" style="max-width: 80px" />
-                                        <br />
-                                       @actor.Actor.FullName
-                                    </div>
-                                }
-                            </div>
-                        </p>
 
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <div class="card-footer">
-                        <p class="card-text">
-                            <a class="btn btn-outline-primary float-right" asp-action="Index">
-                                Back to List
-                            </a>
-                            <a class="btn btn-success text-white  @((DateTime.Now > Model.EndDate || !User.Identity.IsAuthenticated) ? "disabled" : "")" 
-                               asp-controller="Orders" 
-                               asp-action="AddItemToShoppingCart" asp-route-id="@Model.Id"><i class="bi bi-cart-plus"></i> Add to Cart (Price @Model.Price.ToString("c"))</a>
-                        </p>
-                    </div>
-                </div>
+<div style="display:flex;justify-content:center;">
+<img class="bg-image" src="@Model.ImageURL"></img>
+    </div>
+<div class="bg-text" >
+    <h3 style="color:forestgreen">@Model.Price.ToString("c")</h3>
+    <h2>@Model.MovieCategory.Name</h2>
+    <h1 style="font-size:50px;color:deeppink;">@Model.Name</h1>
+    <p>Cinema: @Model.Cinema.Name---Producer: @Model.Producer.FullName</p>
+
+    <p style="color:cornflowerblue">@Model.StartDate---@Model.EndDate</p>
+    <div style="display:flex;justify-content:center;margin:6px;">
+        @foreach (var actor in Model.Actors_Movies)
+        {
+            <div class="column text-center">
+                <img class="border-info " src="@actor.Actor.ProfilePictureURL" style="max-width: 60px;height:60px;" />
+                <br />
+                <p style="margin:5px">  @actor.Actor.FullName</p>
             </div>
-        </div>
+        }
+    </div>
+    <div class="column text-center " style="margin:0 69px">
+        <p>@Html.Raw(Model.Description)</p>
     </div>
 </div>
+
+<style>
+    .bg-text {
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgb(9 9 9 / 0.75); /* Black w/opacity/see-through */
+        color: white;
+        font-weight: bold;
+        border: 3px solid #f1f1f1;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        width: 80%;
+        padding: 20px;
+        text-align: center;
+    }
+    * {
+        box-sizing: border-box;
+    }
+
+    .bg-image {
+        @*background-image:url(@Model.ImageURL);*@
+
+        /* The image used */
+        /* Add the blur effect */
+        filter: blur(8px);
+        -webkit-filter: blur(8px);
+        /* Full height */
+        height: 100%;
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+</style>
+
+@*@section Scripts{
+        <script>
+            $(document).ready(function () {
+                var output = document.getElementById('ImageURL');
+                output.src = $("#ImageURL").val();
+            })
+        </script>
+    }*@

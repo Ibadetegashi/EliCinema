@@ -1,4 +1,5 @@
 ﻿using CinemaApplication.Areas.Admin.Services;
+using CinemaApplication.Data;
 using CinemaApplication.Data.Static;
 using CinemaApplication.Models;
 using Microsoft.AspNetCore.Authorization;
@@ -17,10 +18,12 @@ namespace CinemaApplication.Areas.Admin.Controllers
     public class MoviesController : Controller
     {
         private readonly IMoviesService _service;
+        private readonly ApplicationDbContext _context;
 
-        public MoviesController(IMoviesService service)
+        public MoviesController(IMoviesService service, ApplicationDbContext context)
         {
             _service = service;
+            _context = context;
         }
 
 
@@ -146,21 +149,51 @@ namespace CinemaApplication.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
         //Delete
+        //public async Task<IActionResult> Delete(int id)
+        //{
+        //    var details = await _service.GetByIdAsync(id);
+
+        //    if (details == null) return View("NotFound");
+        //    return View(details);
+        //}
+        //[HttpPost, ActionName("Delete")]
+        //public async Task<IActionResult> DeleteConfirmed(int id)
+        //{
+        //    var actorD = await _service.GetByIdAsync(id);
+        //    if (actorD == null) return View("NotFound");
+        //    await _service.DeleteAsync(id);
+        //    return RedirectToAction(nameof(Index));
+
+        //}
         public async Task<IActionResult> Delete(int id)
         {
-            var details = await _service.GetByIdAsync(id);
+           var movie = await _service.GetMovieByIdAsync(id);
+            var shop = _context.ShoppingCartItems.Where(n => n.Movie.Id == id).ToList();
 
-            if (details == null) return View("NotFound");
-            return View(details);
-        }
-        [HttpPost, ActionName("Delete")]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            var actorD = await _service.GetByIdAsync(id);
-            if (actorD == null) return View("NotFound");
-            await _service.DeleteAsync(id);
-            return RedirectToAction(nameof(Index));
+            var order = _context.OrderItems.Where(n => n.MovieId == id).ToList();
 
+            if (movie == null) return View("NotFound");
+         
+            if (movie == null)
+            {
+                TempData["Error"] = "The movie does not exist!";
+            }else if(shop != null )
+                {
+                    TempData["Error"] = "The movie exist in shopping cart !";
+
+              
+            }
+
+            else
+            {
+                await _service.DeleteAsync(id);
+
+
+
+                TempData["Success"] = "The movie has been deleted!";
+            }
+
+            return RedirectToAction("Index");
         }
 
 

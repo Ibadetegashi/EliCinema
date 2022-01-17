@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Authorization;
 using CinemaApplication.Models;
 using CinemaApplication.Areas.Admin.Services;
 using CinemaApplication.Data.Static;
+using CinemaApplication.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace CinemaApplication.Areas.Admin.Controllers
 {
@@ -16,10 +18,13 @@ namespace CinemaApplication.Areas.Admin.Controllers
     public class CinemasController : Controller
     {
         private readonly ICinemasService service;
+        private readonly ApplicationDbContext context;
 
-        public CinemasController(ICinemasService service)
+
+        public CinemasController(ICinemasService service, ApplicationDbContext context)
         {
             this.service = service;
+            this.context = context;
         }
 
         
@@ -42,6 +47,8 @@ namespace CinemaApplication.Areas.Admin.Controllers
         {
             if (!ModelState.IsValid) return View(cinema);
             await service.AddAsync(cinema);
+            TempData["Success"] = "The Cinema was added!";
+
             return RedirectToAction(nameof(Index));
         }
 
@@ -70,22 +77,45 @@ namespace CinemaApplication.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        //Get: Cinemas/Delete/1
+        ////Get: Cinemas/Delete/1
+        //public async Task<IActionResult> Delete(int id)
+        //{
+        //    var cinemaDetails = await service.GetByIdAsync(id);
+        //    if (cinemaDetails == null) return View("NotFound");
+        //    return View(cinemaDetails);
+        //}
+
+        //[HttpPost, ActionName("Delete")]
+        //public async Task<IActionResult> DeleteConfirm(int id)
+        //{
+        //    var cinemaDetails = await service.GetByIdAsync(id);
+        //    if (cinemaDetails == null) return View("NotFound");
+
+        //    await service.DeleteAsync(id);
+        //    return RedirectToAction(nameof(Index));
+        //}
         public async Task<IActionResult> Delete(int id)
         {
-            var cinemaDetails = await service.GetByIdAsync(id);
-            if (cinemaDetails == null) return View("NotFound");
-            return View(cinemaDetails);
-        }
+            Cinema pro = await context.Cinemas.FindAsync(id);
+            var movie = await context.Movies.Where(n => n.CinemaId == id).ToListAsync();
 
-        [HttpPost, ActionName("Delete")]
-        public async Task<IActionResult> DeleteConfirm(int id)
-        {
-            var cinemaDetails = await service.GetByIdAsync(id);
-            if (cinemaDetails == null) return View("NotFound");
+            if (pro == null)
+            {
+                TempData["Error"] = "The Cinema does not exist!";
+            }
+            else if (movie.Count != 0)
+            {
+                TempData["Error"] = "Can not delete this cinema, cause there are movies in this cinema!";
+            }
+            else
+            {
+                context.Cinemas.Remove(pro);
+                await context.SaveChangesAsync();
 
-            await service.DeleteAsync(id);
-            return RedirectToAction(nameof(Index));
+                TempData["Success"] = "The cinema has been deleted!";
+            }
+
+            return RedirectToAction("Index");
         }
     }
 }

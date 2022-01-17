@@ -43,10 +43,10 @@ function readURL(input) {
 
 $(document).ready(function () {
     $('#myTable').DataTable({
-        "scrollY": "600px",
+        //"scrollY": "600px",
        // "scrollCollapse": false,
         "paging": true,
-       "columnDefs": [{ "orderable": false, "targets": [4] }],
+       //"columnDefs": [{ "orderable": false, "targets": [4] }],
 
         "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]]
 
@@ -106,6 +106,18 @@ $(document).ready(function () {
         "paging": true,
         "columnDefs": [{ "orderable": false, "targets": [ 3] }],
         "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]]
+
+
+    });
+});
+
+$(document).ready(function () {
+    $('#youOrderTable').DataTable({
+        //"scrollY": "600px",
+        //"scrollCollapse": true,
+        "paging": true,
+        "columnDefs": [{ "orderable": false, "targets": [4] }],
+        "lengthMenu": [[3,5, 10, 25, 50, -1], [3,5, 10, 25, 50, "All"]]
 
 
     });
