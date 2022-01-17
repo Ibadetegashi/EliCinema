@@ -1,25 +1,35 @@
-﻿@using CinemaApplication.ViewModels; 
+﻿@using CinemaApplication.ViewModels;
 @model RegisterVM;
 
-@{ 
+@{
     ViewData["Title"] = "Sign up for a new account";
 }
 
-<div class="row">
-    <div class="col-md-6 offset-3">
-        <p>
-            <h4>Sign up for a new account</h4>
-        </p>
+<head>
+    <link rel="stylesheet" href="~/css/signin.css" />
+    @*<style>
+            body {
+                background-image: url('../media/Img/gjK0mx.jpg');
+                background-size: cover;
+            }
+        </style>*@
+</head>
+<div class="registerbox">
+    <div class="row">
+        <div class="col-md-6 offset-3">
+            <p>
+                <h4>Sign up for a new account</h4>
+            </p>
 
-        @if(TempData["Error"] != null)
+            @if (TempData["Error"] != null)
             {
                 <div class="col-md-12 alert alert-danger">
                     <span><b>Sorry!</b> - @TempData["Error"] </span>
                 </div>
             }
 
-        <div class="row">
-            <div class="col-md-8 offset-2">
+            <div class="row">
+
                 <form asp-action="Register">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 

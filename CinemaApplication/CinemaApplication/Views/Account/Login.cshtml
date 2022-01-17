@@ -1,25 +1,29 @@
-﻿@using CinemaApplication.ViewModels; 
+﻿@using CinemaApplication.ViewModels;
 @model LoginVM;
 
-@{ 
+@{
     ViewData["Title"] = "Log in to your account";
 }
 
-<div class="row">
-    <div class="col-md-6 offset-3">
-        <p>
-            <h4>Log in to your account</h4>
-        </p>
+<head>
+    <link rel="stylesheet" href="~/css/signin.css" />
+</head>
+<div class="loginbox">
+    <div class="row">
+        <div class="col-md-6 offset-3">
+            <p>
+                <h4>Log in to your account</h4>
+            </p>
 
-        @if(TempData["Error"] != null)
+            @if (TempData["Error"] != null)
             {
                 <div class="col-md-12 alert alert-danger">
                     <span><b>Sorry!</b> - @TempData["Error"] </span>
                 </div>
             }
 
-        <div class="row">
-            <div class="col-md-8 offset-2">
+            <div class="row">
+
                 <form asp-action="Login">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
@@ -43,3 +47,4 @@
         </div>
     </div>
 </div>
+

@@ -1,14 +1,76 @@
+signin.css
 html,
 body {
-  height: 100%;
+    margin: 0;
+    padding: 0;
+    /* background-image: url('../media/Img/Cinema.jpg');
+    background-image: url('https://images.hdqwalls.com/download/peaceful-blur-background-1x-1920x1080.jpg');*/
+    background-image: url('https://wallpapercave.com/wp/wp9475619.jpg');
+    background-size: cover;
+    font-family: sans-serif;
+    color: #fff;
 }
 
-body {
-  display: flex;
-  align-items: center;
-  padding-top: 40px;
-  padding-bottom: 40px;
-  background-color: #f5f5f5;
+.loginbox {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 500px;
+    height: 520px;
+    padding: 50px 25px;
+    box-sizing: border-box;
+    background: rgba(0,0,0,0.5);
+    border-radius: 35px;
+}
+
+h4 {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    /*color: rgb(255 217 9);*/
+    color: rgb(207 204 215);
+}
+
+.form-control {
+    font-weight: bold;
+    height: 45px;
+    color: #fff;
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 17px;
+}
+
+.btn {
+    width: 100px;
+    height: 40px;
+    font-weight: bold;
+}
+
+.btn-outline-success {
+    color: #3dd760;
+    border-color: #38bb56;
+}
+
+.registerbox {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 500px;
+    height: 600px;
+    padding: 50px 25px;
+    box-sizing: border-box;
+    background: rgba(0,0,0,0.5);
+    border-radius: 35px;
+}
+
+/*body {
+    display: flex;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #f5f5f;
 }
 
 .form-signin {
@@ -17,9 +79,21 @@ body {
   padding: 15px;
   margin: auto;
 }
+.form-signin{
+    position:absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width: 350px;
+    height: 420px;
+    padding: 80px 40px;
+    box-sizing: border-box;
+    background: rgba(0,0,0,0.5);
+}
 
-.form-signin .checkbox {
+/*.form-signin .checkbox {
   font-weight: 400;
+
 }
 
 .form-signin .form-floating:focus-within {
@@ -36,4 +110,4 @@ body {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
-}
+}*/
