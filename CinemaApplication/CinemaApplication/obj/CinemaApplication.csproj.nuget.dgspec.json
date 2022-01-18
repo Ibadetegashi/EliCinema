@@ -1,21 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\STARTECH\\source\\repos\\CinemaProject1\\CinemaApplication\\CinemaApplication\\CinemaApplication.csproj": {}
+    "C:\\Users\\ibade\\Source\\Repos\\eli18\\CinemaApplication\\CinemaApplication\\CinemaApplication.csproj": {}
   },
   "projects": {
-    "C:\\Users\\STARTECH\\source\\repos\\CinemaProject1\\CinemaApplication\\CinemaApplication\\CinemaApplication.csproj": {
+    "C:\\Users\\ibade\\Source\\Repos\\eli18\\CinemaApplication\\CinemaApplication\\CinemaApplication.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\STARTECH\\source\\repos\\CinemaProject1\\CinemaApplication\\CinemaApplication\\CinemaApplication.csproj",
+        "projectUniqueName": "C:\\Users\\ibade\\Source\\Repos\\eli18\\CinemaApplication\\CinemaApplication\\CinemaApplication.csproj",
         "projectName": "CinemaApplication",
-        "projectPath": "C:\\Users\\STARTECH\\source\\repos\\CinemaProject1\\CinemaApplication\\CinemaApplication\\CinemaApplication.csproj",
-        "packagesPath": "C:\\Users\\STARTECH\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\STARTECH\\source\\repos\\CinemaProject1\\CinemaApplication\\CinemaApplication\\obj\\",
+        "projectPath": "C:\\Users\\ibade\\Source\\Repos\\eli18\\CinemaApplication\\CinemaApplication\\CinemaApplication.csproj",
+        "packagesPath": "C:\\Users\\ibade\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ibade\\Source\\Repos\\eli18\\CinemaApplication\\CinemaApplication\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\STARTECH\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\ibade\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -105,7 +110,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

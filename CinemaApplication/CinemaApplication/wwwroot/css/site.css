@@ -81,7 +81,7 @@ table.sorting tr:not(.home) {
     cursor: pointer;
 }
  th{
-     background-color:palevioletred;
+     background-color:darkred;
 
 
 }
@@ -91,10 +91,10 @@ table.sorting tr:not(.home) {
 }
 
 .page-item.active .page-link {
-    background-color: lightpink !important;
+    background-color: darkred !important;
     border: 1px solid pink;
 }
 
 .page-link {
-    color: palevioletred !important;
+    color: black !important;
 }

@@ -5,10 +5,11 @@ body {
     padding: 0;
     /* background-image: url('../media/Img/Cinema.jpg');
     background-image: url('https://images.hdqwalls.com/download/peaceful-blur-background-1x-1920x1080.jpg');*/
-    background-image: url('https://wallpapercave.com/wp/wp9475619.jpg');
+    background-image: url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y2luZW1hfGVufDB8fDB8fA%3D%3D&w=1000&q=80');
     background-size: cover;
-    font-family: sans-serif;
+   
     color: #fff;
+    height:900px;
 }
 
 .loginbox {
@@ -20,8 +21,9 @@ body {
     height: 520px;
     padding: 50px 25px;
     box-sizing: border-box;
-    background: rgba(0,0,0,0.5);
+    background-color: black;
     border-radius: 35px;
+    box-shadow: 0 0 15px darkred;
 }
 
 h4 {
@@ -29,11 +31,11 @@ h4 {
     margin: 0;
     text-align: center;
     /*color: rgb(255 217 9);*/
-    color: rgb(207 204 215);
+    color:darkred;
 }
 
 .form-control {
-    font-weight: bold;
+    
     height: 45px;
     color: #fff;
     width: 100%;
@@ -41,13 +43,14 @@ h4 {
     font-size: 17px;
 }
 
-.btn {
+.btn1{
     width: 100px;
     height: 40px;
     font-weight: bold;
+    color:darkred;
 }
 
-.btn-outline-success {
+.aa {
     color: #3dd760;
     border-color: #38bb56;
 }
@@ -61,8 +64,9 @@ h4 {
     height: 600px;
     padding: 50px 25px;
     box-sizing: border-box;
-    background: rgba(0,0,0,0.5);
+    background: black;
     border-radius: 35px;
+    box-shadow: 0 0 15px darkred;
 }
 
 /*body {

@@ -173,16 +173,17 @@ namespace CinemaApplication.Areas.Admin.Controllers
             var order = _context.OrderItems.Where(n => n.MovieId == id).ToList();
 
             if (movie == null) return View("NotFound");
-         
+
             if (movie == null)
             {
                 TempData["Error"] = "The movie does not exist!";
-            }else if(shop != null )
-                {
-                    TempData["Error"] = "The movie exist in shopping cart !";
-
-              
             }
+            //}else if(shop != null )
+            //    {
+            //        TempData["Error"] = "The movie exist in shopping cart !";
+
+
+            //}
 
             else
             {
