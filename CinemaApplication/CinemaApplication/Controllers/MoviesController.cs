@@ -36,7 +36,7 @@ namespace CinemaApplication.Controllers
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            var allMovies = await _service.GetAllAsync(n=>n.Cinema);
+            var allMovies = await _service.GetAllAsync(n=>n.MovieCategory);
             return View(allMovies);
         }
         public async Task<IActionResult> Details(int id)

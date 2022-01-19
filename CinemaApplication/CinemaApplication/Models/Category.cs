@@ -15,5 +15,7 @@ namespace CinemaApplication.Models
         public string Name { get; set; }
         public string Slug { get; set; }
         public int Sorting { get; set; }
+        public List<Movie> Movies { get; set; }
+
     }
 }

@@ -78,14 +78,14 @@
         {
 
             <div class="card-group" style="margin:10px;">
-                <div class="card" style="max-width: 16rem;">
-                    <img src="@item.ImageURL" class="card-img-top" alt="@item.Name">
+                <div class="card" style="max-width: 16rem;max-height:900px;">
+                    <img src="@item.ImageURL" class="card-img-top" alt="@item.Name" style="max-height:450px;min-height:450px;">
                     <div class="card-body">
-                        <em> <h3 class="card-title" style="color:darkgreen;font:">@item.Name</h3></em>
+                        <em> <h3 class="card-title" style="color:darkred;font:">@item.Name</h3></em>
                         <div>
                             @*<p class="card-text">@item.Description</p>*@
                             @*<p class="card-text"><b>Cinema: </b>@item.Cinema.Name</p>*@
-                            @*<p class="card-text"><b>Category: </b>@item.MovieCategory.Name</p>*@
+                            <p style="color:darkred" class="card-text"><b> @item.MovieCategory.Name </b></p>
 
                             <p class="card-text ">
                                 @*<b>Status: </b>*@
@@ -106,11 +106,11 @@
                     <div class="card-footer">
 
                         <p class="card-text" style="display:flex;justify-content:space-between">
-                            <a class="btn btn-outline-info float-right" asp-action="Details" asp-route-id="@item.Id">
-                                <i class="bi bi-eye" style="padding-bottom:100px"></i> Show Details
+                            <a style="color:darkred" class="btn btn-outline float-right" asp-action="Details" asp-route-id="@item.Id">
+                                <i class="bi bi-eye" style="padding-bottom:100px;color:darkred"></i> Show Details
                             </a>
-                            <a class="btn btn-success text-white  @((DateTime.Now > item.EndDate || !User.Identity.IsAuthenticated) ? "disabled" : "")" asp-controller="Orders" asp-action="AddItemToShoppingCart" asp-route-id="@item.Id">
-                                <i class="bi bi-cart-plus"></i>   @item.Price.ToString("c")
+                            <a style="background-color:darkred" class="btn  text-white  @((DateTime.Now > item.EndDate || !User.Identity.IsAuthenticated) ? "disabled" : "")" asp-controller="Orders" asp-action="AddItemToShoppingCart" asp-route-id="@item.Id">
+                                <i style="color:white" class="bi bi-cart-plus"></i>   @item.Price.ToString("c")
                             </a>
 
 

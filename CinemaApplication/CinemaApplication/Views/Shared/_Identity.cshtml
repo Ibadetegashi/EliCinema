@@ -1,54 +1,58 @@
 ﻿@using Microsoft.AspNetCore.Identity;
 @inject UserManager<ApplicationUser> UserManager
+    <style>
+        .nav-item a, dropdown a, dropsown i {
+            color: darkred;
+        }
+    </style>
+    @if (!User.Identity.IsAuthenticated)
+    {
+        <a style="background-color:darkred;color:white" class="btn btn-outline white my-2 my-sm-0" asp-controller="Account" asp-action="Login">
+            <i class="bi bi-box-arrow-in-right"></i> Log in
+        </a>
+        <span style="padding: 5px;"></span>
 
-@if (!User.Identity.IsAuthenticated)
-{
-<a class="btn btn-outline-success my-2 my-sm-0" asp-controller="Account" asp-action="Login">
-    <i class="bi bi-box-arrow-in-right"></i> Log in
-</a>
-                <span style="padding: 5px;"></span>
-
-                                <a class="btn btn-outline-primary my-2 my-sm-0" asp-controller="Account" asp-action="Register">
-                                    <i class="bi bi-person-plus"></i> Register
-                                </a> }
-                            else
-                            { @*User profile section*@
-                                            <div class="dropdown">
-                                                <button class="btn btn-outline-success dropdown-toggle" type="button" id="profile-btn" data-toggle="dropdown"
-                                                        aria-expanded="false">
-                                                    <i class="bi bi-person-badge"></i> Hello @UserManager.GetUserName(User)
-                                                </button>
-                                                <ul class="dropdown-menu" aria-labelledby="profile-btn">
-                                                    <li>
-                                                        @if (User.IsInRole("Admin") || User.IsInRole("Super"))
-                                                        {
-                                                    <a class="dropdown-item" asp-area="Admin" asp-controller="Orders" asp-action="Index">
-                                                        <i class="bi bi-list"></i> Orders
-                                                    </a>
+        <a style="background-color:darkred;color:white" class="btn btn-outline white my-2 my-sm-0" asp-controller="Account" asp-action="Register">
+            <i class="bi bi-person-plus"></i> Register
+        </a> }
+    else
+    { @*User profile section*@
+    <div class="dropdown">
+        <button style="background-color:darkred;color:white" class="btn btn-out dropdown-toggle" type="button" id="profile-btn" data-toggle="dropdown"
+                aria-expanded="false">
+            <i style="color:darkred;" class="bi bi-person-badge"></i>  Hello @UserManager.GetUserName(User)
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="profile-btn">
+            <li>
+                @if (User.IsInRole("Admin") || User.IsInRole("Super"))
+                {
+                    <a class="dropdown-item" style="color:darkred;" asp-area="Admin" asp-controller="Orders" asp-action="Index">
+                        <i style="color:darkred;" class="bi bi-list"></i> Orders
+                    </a>
                 }
                 else
                 {
-                                                    <a class="dropdown-item"  asp-controller="Orders" asp-action="Index">
-                                                        <i class="bi bi-list"></i> Orders
-                                                    </a>
+                    <a class="dropdown-item" style="color:darkred;" asp-controller="Orders" asp-action="Index">
+                        <i style="color:darkred;" class="bi bi-list"></i> Orders
+                    </a>
                 }
-                                                                    </li>
+            </li>
 
-                                                    @if (User.IsInRole("Admin") || User.IsInRole("Super"))
-                                                    {
-                                    <li>
-                                        <a class="dropdown-item" asp-area="Admin" asp-controller="Account" asp-action="Users">
-                                            <i class="bi bi-people"></i> Users
-                                        </a>
-                                    </li>
-}
-                                                </ul>
-                                            </div>
-                                                            <span style="padding: 5px;"></span>
-                                                                            <form asp-controller="Account" asp-action="Logout">
-                                                                                <button class="btn btn-outline-danger my-2 my-sm-0">
-                                                                                    <i class="bi bi-box-arrow-in-right"></i> Log out
-                                                                                </button>
-                                                                            </form>
+            @if (User.IsInRole("Admin") || User.IsInRole("Super"))
+            {
+                <li>
+                    <a class="dropdown-item" style="color:darkred;" asp-area="Admin" asp-controller="Account" asp-action="Users">
+                        <i style="color:darkred;" class="bi bi-people"></i> Users
+                    </a>
+                </li>
+            }
+        </ul>
+    </div>
+    <span style="padding: 5px;"></span>
+    <form asp-controller="Account" asp-action="Logout">
+        <button class="btn btn-outline-danger my-2 my-sm-0">
+            <i class="bi bi-box-arrow-in-right"></i> Log out
+        </button>
+    </form>
 }
 

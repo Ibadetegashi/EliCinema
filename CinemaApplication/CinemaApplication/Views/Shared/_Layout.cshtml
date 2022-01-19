@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
     <script src="https://kit.fontawesome.com/e4ecf4b178.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4-4.1.1/jq-3.3.1/dt-1.10.23/b-1.6.5/fc-3.3.2/sc-2.0.3/sb-1.0.1/sp-1.2.2/sl-1.3.1/datatables.min.css" />
+
+    
 </head>
 <body >
     <header>
@@ -16,12 +18,12 @@
             <div class="container">
                 @if (User.IsInRole("Admin") || User.IsInRole("Super"))
                 {
-                    <a class="navbar-brand" asp-area="Admin" asp-controller="Account" asp-action="Users"><i class="fas fa-users-cog">Admin</i></a>
+                    <a class="navbar-brand" asp-area="Admin" asp-controller="Account" asp-action="Users"><i style="color:darkred" class="fas fa-users-cog">Admin</i></a>
 
                 }
 
 
-                <a class="navbar-brand" asp-controller="Movies" asp-action="Index"><i class='fas fa-film fa-spin fa-x'>ELI</i></a>
+                <a class="navbar-brand" asp-controller="Movies" asp-action="Index"><i style="color:darkred" class='fas fa-film fa-spin fa-x'>ELI</i></a>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -37,16 +39,16 @@
                     <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                 </li>*@
 
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Movies" asp-action="Index">Movies</a>
-                        </li>
+                        @*<li class="nav-item">
+                            <a class="nav-link "style="color:darkred" asp-area="" asp-controller="Movies" asp-action="Index">Movies</a>
+                        </li>*@
                     </ul>
 
 
                 </div>
                 <form class="form-inline my-2 my-lg-0" asp-controller="Movies" asp-action="Filter" style="padding-right: 25px;">
-                    <input name="searchString" type="text" class="form-control" placeholder="Search for a movie..." aria-label="Recipient's username" aria-describedby="button-addon2">
-                    <button class="btn btn-toolbar my-2 my-sm-0" type="submit"><i class="bi bi-search"></i></button>
+                    <input name="searchString" type="text" style="color:darkred;" class="form-control" placeholder="Search for a movie..." aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <button class="btn btn-toolbar my-2 my-sm-0" type="submit"><i style="color:darkred;font:bolder" class="bi bi-search"></i></button>
                 </form>
 
                 <ul class="navbar-nav">
@@ -59,7 +61,7 @@
                     <ul class="dropdown-menu" aria-labelledby="profile-btn">
                         <li>
                             <a class="dropdown-item" asp-controller="Orders" asp-action="Index">
-                                <i class="bi bi-list"></i> Orders
+                                <i style="color:darkred" class="bi bi-list"></i> Orders
                             </a>
                         </li>
 

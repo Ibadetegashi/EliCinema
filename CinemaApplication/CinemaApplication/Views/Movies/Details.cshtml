@@ -11,10 +11,10 @@
 <div class="bg-text" >
     <h3 style="color:forestgreen">@Model.Price.ToString("c")</h3>
     <h2>@Model.MovieCategory.Name</h2>
-    <h1 style="font-size:50px;color:deeppink;">@Model.Name</h1>
-    <p>Cinema: @Model.Cinema.Name---Producer: @Model.Producer.FullName</p>
+    <h1 style="font-size:50px;color:darkred;">@Model.Name</h1>
+    <p> @Model.Cinema.Name / @Model.Producer.FullName</p>
 
-    <p style="color:cornflowerblue">@Model.StartDate---@Model.EndDate</p>
+    <p >@Model.StartDate \ @Model.EndDate</p>
     <div style="display:flex;justify-content:center;margin:6px;">
         @foreach (var actor in Model.Actors_Movies)
         {
@@ -33,7 +33,7 @@
 <style>
     .bg-text {
         background-color: rgb(0,0,0); /* Fallback color */
-        background-color: rgb(9 9 9 / 0.75); /* Black w/opacity/see-through */
+        background-color: black; /* Black w/opacity/see-through */
         color: white;
         font-weight: bold;
         border: 3px solid #f1f1f1;

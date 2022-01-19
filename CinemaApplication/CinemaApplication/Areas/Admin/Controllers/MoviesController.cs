@@ -167,7 +167,7 @@ namespace CinemaApplication.Areas.Admin.Controllers
         //}
         public async Task<IActionResult> Delete(int id)
         {
-           var movie = await _service.GetMovieByIdAsync(id);
+            var movie = await _service.GetMovieByIdAsync(id);
             var shop = _context.ShoppingCartItems.Where(n => n.Movie.Id == id).ToList();
 
             var order = _context.OrderItems.Where(n => n.MovieId == id).ToList();
@@ -178,12 +178,12 @@ namespace CinemaApplication.Areas.Admin.Controllers
             {
                 TempData["Error"] = "The movie does not exist!";
             }
-            //}else if(shop != null )
-            //    {
-            //        TempData["Error"] = "The movie exist in shopping cart !";
+            else if (shop != null)
+            {
+                TempData["Error"] = "The movie exist in shopping cart !";
 
 
-            //}
+            }
 
             else
             {
