@@ -41,7 +41,8 @@ namespace CinemaApplication.Areas.Admin.Controllers
             Page page = await context.Pages.FirstOrDefaultAsync(x => x.Id == id);
             if (page == null)
             {
-                return NotFound();
+             return   View("NotFound");
+
             }
 
             return View(page);
@@ -83,7 +84,8 @@ namespace CinemaApplication.Areas.Admin.Controllers
             Page page = await context.Pages.FindAsync(id);
             if (page == null)
             {
-                return NotFound();
+                return View("NotFound");
+
             }
 
             return View(page);

@@ -16,8 +16,10 @@ namespace CinemaApplication.ViewModels
         [Required(ErrorMessage = "Email address is required")]
         public string EmailAddress { get; set; }
 
-        [Required]
-        [DataType(DataType.Password)]
+       
+        [DataType(DataType.Password), Required]
+        [RegularExpression(@"^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$", ErrorMessage = "Minimum 8 characters, at least one letter, one number and one special character:")]
+
         public string Password { get; set; }
 
         [Display(Name = "Confirm password")]

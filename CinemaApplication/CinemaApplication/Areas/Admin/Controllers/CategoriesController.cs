@@ -81,7 +81,7 @@ namespace CinemaApplication.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
                 category.Slug = category.Name.ToLower().Replace(" ", "-");
-
+         
                 var slug = await context.Categories.Where(x => x.Id != id).FirstOrDefaultAsync(x => x.Slug == category.Slug);
                 if (slug != null)
                 {
@@ -93,6 +93,7 @@ namespace CinemaApplication.Areas.Admin.Controllers
                 await context.SaveChangesAsync();
 
                 TempData["Success"] = "The category has been edited!";
+                if (category == null) return View("NotFound");
 
                 return RedirectToAction("Edit", new { id });
             }
