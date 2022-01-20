@@ -60,6 +60,8 @@ namespace CinemaApplication.Areas.Admin.Controllers
         public async Task<IActionResult> Details(int id)
         {
             var movieDetail = await _service.GetMovieByIdAsync(id);
+            if (movieDetail == null) return View("NotFound");
+
             return View(movieDetail);
         }
         //public async Task<IActionResult> Filter(string searchString)

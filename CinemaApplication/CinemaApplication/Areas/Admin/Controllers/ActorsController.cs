@@ -120,6 +120,8 @@ namespace CinemaApplication.Areas.Admin.Controllers
 
                 TempData["Success"] = "The actor has been deleted!";
             }
+               if (actor == null) return View("NotFound");
+
 
             return RedirectToAction("Index");
         }

@@ -37,11 +37,14 @@ namespace CinemaApplication.Controllers
         public async Task<IActionResult> Index()
         {
             var allMovies = await _service.GetAllAsync(n=>n.MovieCategory);
+
             return View(allMovies);
         }
         public async Task<IActionResult> Details(int id)
         {
             var movieDetail = await _service.GetMovieByIdAsync(id);
+            if (movieDetail == null) return View("NotFound");
+
             return View(movieDetail);
         }
 
